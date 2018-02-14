@@ -5,12 +5,15 @@ import Header from './Header';
 import Main from './Main';
 import Footer from './Footer';
 
-const App = () => (
-  <div>
-    <FullScreenLoaidng />
-    <Header />
-    <Main />
-    <Footer />
-  </div>
-);
+const App = (props) => {
+  console.log(props);
+  return (
+    <div>
+      <FullScreenLoaidng />
+      <Header />
+      <Main />
+      <Footer />
+    </div>
+  );
+};
 export default App;

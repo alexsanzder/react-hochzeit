@@ -40,9 +40,11 @@ const StyledSticky = styled(Sticky)`
   z-index: 1200;
 `;
 
+const NavHeader = styled.header``;
+
 const Header = () => (
-  <header>
-    <StyledSticky top="#header" innerZ="1200">
+  <NavHeader>
+    <StyledSticky innerZ="1200">
       <Navbar id="nav" collapseOnSelect>
         <Navbar.Header>
           <Navbar.Brand>
@@ -71,7 +73,7 @@ const Header = () => (
         </Navbar.Collapse>
       </Navbar>
     </StyledSticky>
-  </header>
+  </NavHeader>
 );
 
 export default Header;
