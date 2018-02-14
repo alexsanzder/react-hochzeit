@@ -7,7 +7,7 @@ import Footer from './Footer';
 import SectionHome from './Sections/SectionHome';
 import SectionCouple from './Sections/SectionCouple';
 import SectionFrase from './Sections/SectionFrase';
-import SectionOurStory from './Sections/SectionOurStory';
+import SectionTimeLine from './Sections/SectionTimeLine';
 import SectionCounter from './Sections/SectionCounter';
 import SectionGallery from './Sections/SectionGallery';
 import SectionFeatured from './Sections/SectionFeatured';
@@ -21,7 +21,7 @@ const Main = () => (
     <Header />
     <SectionCouple />
     <SectionFrase />
-    <SectionOurStory />
+    <SectionTimeLine />
     <SectionCounter />
     <SectionGallery />
     <SectionFeatured />

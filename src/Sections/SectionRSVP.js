@@ -1,5 +1,95 @@
 import React from 'react';
 
+import styled from 'styled-components';
+
+import { Grid, Row, Col, Checkbox } from 'react-bootstrap';
+
+/* 
+#ajaxForm input[type="checkbox"] {
+  display: none;
+}
+#ajaxForm label.checkbox-button {
+  font-family: "Oswald", Verdana, Geneva, sans-serif;
+  font-size: 23px;
+  cursor: pointer;
+  font-weight: normal;
+}
+#ajaxForm label.checkbox-button:hover {
+  color: #c3a180;
+}
+#ajaxForm input[type="checkbox"]:checked + label.checkbox-button {
+  color: #c3a180;
+}
+input[type="checkbox"]:checked + label.checkbox-button i.fa::before {
+  content: "\f058";
+}
+ */
+
+const Toggle = styled(Checkbox)`
+  label {
+    font-family: 'Oswald', Verdana, Geneva, sans-serif;
+    font-size: 23px;
+    cursor: pointer;
+    font-weight: normal;
+    &:hover {
+      color: #c3a180;
+    }
+    &::before {
+      letter-spacing: 10px;
+      display: none;
+      font-family: 'Font Awesome 5 Solid';
+      content: '\f204';
+    }
+    .svg-inline--fa {
+      margin-right: 0.3em;
+    }
+  }
+  input {
+    &:checked + label {
+      color: #c3a180;
+      &::before {
+        display: none;
+        font-family: 'Font Awesome 5 Solid';
+        color: red;
+        font-size: 100px;
+        content: '\f205';
+      }
+    }
+  }
+`;
+const Label = styled.label`
+  font-family: 'Oswald', Verdana, Geneva, sans-serif;
+  font-size: 23px;
+  cursor: pointer;
+  font-weight: normal;
+  &:hover {
+    color: #c3a180;
+  }
+  &::before {
+    letter-spacing: 10px;
+    display: none;
+    font-family: 'Font Awesome 5 Solid';
+    content: '\f204';
+  }
+  .svg-inline--fa {
+    margin-right: 0.3em;
+  }
+`;
+
+const Input = styled.input`
+  display: none;
+  &:checked + ${Label} {
+    color: #c3a180;
+    &::before {
+      display: none;
+      font-family: 'Font Awesome 5 Solid';
+      color: red;
+      font-size: 100px;
+      content: '\f205';
+    }
+  }
+`;
+
 const SectionRSVP = () => (
   <section id="rsvp">
     <div className="container">
@@ -25,33 +115,24 @@ const SectionRSVP = () => (
           <form id="ajaxForm" data-toggle="validator">
             <div className="row bot-mrg-20">
               <div className="col-md-4 text-center">
-                <input type="checkbox" id="checkbox-1" name="events[]" value="Pre-Wedding Dinner" />
-                <label htmlFor="checkbox-1" className="checkbox-button">
-                  <i className="fa fa-circle-o" aria-hidden="true" /> Pre-Wedding Dinner
-                </label>
+                <Input type="checkbox" id="checkbox-1" name="events[]" value="Pre-Wedding Dinner" />
+                <Label htmlFor="checkbox-1">Pre-Wedding Dinner</Label>
                 <p>
-                  Victory Gardens Hall, 11 Grant Ave. Carteret NJ 9851 (732) 841-45 90, (732) 634-13
-                  86 info@emailname.com
+                  Lars Homestead, <br /> Schott el-Djerid <br />Alderaan.
                 </p>
               </div>
               <div className="col-md-4 text-center">
-                <input type="checkbox" id="checkbox-2" name="events[]" value="Ceremony" />
-                <label htmlFor="checkbox-2" className="checkbox-button">
-                  <i className="fa fa-circle-o" aria-hidden="true" /> Ceremony
-                </label>
+                <Toggle title="Ceremony">Ceremony</Toggle>
+
                 <p>
-                  Victory Gardens Hall, 11 Grant Ave. Carteret NJ 9851 (732) 841-45 90, (732) 634-13
-                  86 info@emailname.com
+                  Lars Homestead, <br /> Schott el-Djerid <br />Alderaan.
                 </p>
               </div>
               <div className="col-md-4 text-center">
-                <input type="checkbox" id="checkbox-3" name="events[]" value="Party" />
-                <label htmlFor="checkbox-3" className="checkbox-button">
-                  <i className="fa fa-circle-o" aria-hidden="true" /> Party
-                </label>
+                <Input type="checkbox" id="checkbox-3" name="events[]" value="Party" />
+                <Label htmlFor="checkbox-3">Party</Label>
                 <p>
-                  Victory Gardens Hall, 11 Grant Ave. Carteret NJ 9851 (732) 841-45 90, (732) 634-13
-                  86 info@emailname.com
+                  Lars Homestead, <br /> Schott el-Djerid <br />Alderaan.
                 </p>
               </div>
             </div>

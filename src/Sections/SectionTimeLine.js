@@ -133,7 +133,7 @@ const TimeLineList = styled.ul`
   }
 `;
 
-const SectionOurStory = () => (
+const SectionTimeLine = () => (
   <Wrapper>
     <Grid>
       <Row>
@@ -159,7 +159,7 @@ const SectionOurStory = () => (
       <TimeLineList>
         <TimeLineItem>
           <TimeLineBadge>
-            <i className="fa fa-heart" />
+            <i className="fas fa-heart" />
           </TimeLineBadge>
           <TimeLinePanel>
             <div className="timeline-heading">
@@ -183,7 +183,7 @@ const SectionOurStory = () => (
         </TimeLineItem>
         <TimeLineItem inverted>
           <TimeLineBadge>
-            <i className="fa fa-heart" aria-hidden="true" />
+            <i className="fas fa-heart" aria-hidden="true" />
           </TimeLineBadge>
           <TimeLinePanel inverted>
             <div className="timeline-heading">
@@ -209,7 +209,7 @@ const SectionOurStory = () => (
         </TimeLineItem>
         <TimeLineItem>
           <TimeLineBadge>
-            <i className="fa fa-heart" />
+            <i className="fas fa-heart" />
           </TimeLineBadge>
           <TimeLinePanel>
             <div className="timeline-heading">
@@ -233,7 +233,7 @@ const SectionOurStory = () => (
         </TimeLineItem>
         <TimeLineItem inverted>
           <TimeLineBadge>
-            <i className="fa fa-heart" aria-hidden="true" />
+            <i className="fas fa-heart" aria-hidden="true" />
           </TimeLineBadge>
           <TimeLinePanel inverted>
             <div className="timeline-heading">
@@ -257,7 +257,7 @@ const SectionOurStory = () => (
         </TimeLineItem>
         <TimeLineItem>
           <TimeLineBadge end>
-            <i className="fa fa-heart" aria-hidden="true" />
+            <i className="fas fa-heart" aria-hidden="true" />
           </TimeLineBadge>
         </TimeLineItem>
       </TimeLineList>
@@ -272,4 +272,4 @@ const SectionOurStory = () => (
   </Wrapper>
 );
 
-export default SectionOurStory;
+export default SectionTimeLine;

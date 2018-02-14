@@ -56,19 +56,19 @@ const SectionCouple = () => (
               auctor in est ac dignissim.
             </p>
             <SocialIcons>
-              <a href="index.html#" target="_blank" className="facebook">
-                <i className="fa fa-facebook" />
+              <a href="index.html#" target="_blank" className="fabcebook">
+                <i className="fab fa-facebook-f" />
               </a>
               <a href="index.html#" target="_blank" className="instagram">
-                <i className="fa fa-instagram" />
+                <i className="fab fa-instagram" />
               </a>
               <a href="index.html#" target="_blank" className="twitter">
-                <i className="fa fa-twitter" />
+                <i className="fab fa-twitter" />
               </a>
-              {/* <a href="#" target="_blank" className="pinterest"><i className="fa fa-pinterest-p"></i></a>
-                            <a href="#" target="_blank" className="google"><i className="fa fa-google-plus"></i></a>
-                            <a href="#" target="_blank" className="youtube"><i className="fa fa-youtube-play"></i></a>
-                            <a href="#" target="_blank" className="vimeo"><i className="fa fa-vimeo"></i></a> */}
+              {/* <a href="#" target="_blank" className="pinterest"><i className="fab fa-pinterest-p"></i></a>
+                            <a href="#" target="_blank" className="google"><i className="fab fa-google-plus"></i></a>
+                            <a href="#" target="_blank" className="youtube"><i className="fab fa-youtube-play"></i></a>
+                            <a href="#" target="_blank" className="vimeo"><i className="fab fa-vimeo"></i></a> */}
             </SocialIcons>
           </Profile>
         </Col>
@@ -88,19 +88,19 @@ const SectionCouple = () => (
               auctor in est ac dignissim.
             </p>
             <SocialIcons>
-              <a href="index.html#" target="_blank" className="facebook">
-                <i className="fa fa-facebook" />
+              <a href="index.html#" target="_blank" className="fabcebook">
+                <i className="fab fa-facebook-f" />
               </a>
               <a href="index.html#" target="_blank" className="instagram">
-                <i className="fa fa-instagram" />
+                <i className="fab fa-instagram" />
               </a>
               <a href="index.html#" target="_blank" className="twitter">
-                <i className="fa fa-twitter" />
+                <i className="fab fa-twitter" />
               </a>
-              {/* <a href="#" target="_blank" className="pinterest"><i className="fa fa-pinterest-p"></i></a>
-                            <a href="#" target="_blank" className="google"><i className="fa fa-google-plus"></i></a>
-                            <a href="#" target="_blank" className="youtube"><i className="fa fa-youtube-play"></i></a>
-                            <a href="#" target="_blank" className="vimeo"><i className="fa fa-vimeo"></i></a> */}
+              {/* <a href="#" target="_blank" className="pinterest"><i className="fab fa-pinterest-p"></i></a>
+                            <a href="#" target="_blank" className="google"><i className="fab fa-google-plus"></i></a>
+                            <a href="#" target="_blank" className="youtube"><i className="fab fa-youtube-play"></i></a>
+                            <a href="#" target="_blank" className="vimeo"><i className="fab fa-vimeo"></i></a> */}
             </SocialIcons>
           </Profile>
         </Col>

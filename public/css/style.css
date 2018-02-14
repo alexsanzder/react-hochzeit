@@ -231,11 +231,6 @@ section {
   padding: 120px 0px;
 }
 
-section.img-bg-3 {
-  background: url("http://via.placeholder.com/1100x619") no-repeat;
-  background-attachment: fixed;
-  background-size: cover;
-}
 section.img-bg-4 {
   background: url("http://via.placeholder.com/1100x619") no-repeat;
   background-attachment: fixed;
@@ -370,28 +365,6 @@ a.mfp-image:hover {
 }
 
 /* 
-	10. Section - Gift Registry
- */
-/*Owl Carrousel*/
-#owl-logo .item {
-  margin: 5px;
-  background: #fff;
-  padding: 30px;
-}
-#owl-logo .item img {
-  display: block;
-  width: 100%;
-  height: auto;
-}
-.owl-theme .owl-controls .owl-page span {
-  background: #7b7571;
-}
-.owl-theme .owl-controls .owl-page.active span,
-.owl-theme .owl-controls.clickable .owl-page:hover span {
-  background: #c3a180;
-}
-
-/* 
 	11. Section - RSVP
  */
 #ajaxForm input,
@@ -418,41 +391,7 @@ a.mfp-image:hover {
   margin-bottom: 0px;
   border-color: #a94442;
 }
-#ajaxForm input[type="checkbox"] {
-  display: none;
-}
-#ajaxForm label.checkbox-button {
-  font-family: "Oswald", Verdana, Geneva, sans-serif;
-  font-size: 23px;
-  cursor: pointer;
-  font-weight: normal;
-}
-#ajaxForm label.checkbox-button:hover {
-  color: #c3a180;
-}
-#ajaxForm input[type="checkbox"]:checked + label.checkbox-button {
-  color: #c3a180;
-}
-input[type="checkbox"]:checked + label.checkbox-button i.fa::before {
-  content: "\f058";
-}
 
-/* 
-	12. Section - Footer
- */
-section#footer ul.names {
-  font-size: 43px;
-}
-section#footer .circle {
-  width: 64px;
-  height: 64px;
-  font-size: 41px;
-  line-height: 1.5em;
-  top: 0px;
-}
-section#footer .copyright {
-  margin-top: 40px;
-}
 /* 
 	13. Responsive
  */
