@@ -1,10 +1,37 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 import styled from 'styled-components';
 
 import { Navbar, Nav } from 'react-bootstrap';
 import Sticky from 'react-stickynode';
+
+const NavBar = styled(Navbar)`
+  font-family: 'Oswald', Verdana, Geneva, sans-serif;
+  font-size: 20px;
+  z-index: 998;
+  width: 100%;
+  padding: 20px 0px;
+  background-color: #fff;
+  border: 0px;
+`;
+
+const StyledNav = styled(Nav)`
+  padding: 0px 10px;
+`;
+
+const StyledLink = styled(NavLink)`
+  padding: 10px 6px;
+  &.active {
+    color: #c3a180 !important;
+    background: none;
+  }
+  &::after {
+    content: '/';
+    padding-left: 10px;
+    color: rgba(0, 0, 0, 0.2);
+  }
+`;
 
 const Names = styled.ul`
   list-style: none;
@@ -45,7 +72,7 @@ const NavHeader = styled.header``;
 const Header = () => (
   <NavHeader>
     <StyledSticky innerZ="1200">
-      <Navbar id="nav" collapseOnSelect>
+      <NavBar collapseOnSelect>
         <Navbar.Header>
           <Navbar.Brand>
             <a href="index.html#">
@@ -59,19 +86,40 @@ const Header = () => (
           <Navbar.Toggle />
         </Navbar.Header>
         <Navbar.Collapse>
-          <Nav pullRight>
+          <StyledNav pullRight>
             <li>
-              <Link to="/">Home</Link>
+              <StyledLink exact activeClassName="active" to="/">
+                Home
+              </StyledLink>
             </li>
             <li>
-              <Link to="/gallery">Gallery</Link>
+              <StyledLink activeClassName="active" to="/wedding">
+                Wedding
+              </StyledLink>
             </li>
             <li>
-              <Link to="/rsvp">RSVP</Link>
+              <StyledLink activeClassName="active" to="/accommodation">
+                Accommodation
+              </StyledLink>
             </li>
-          </Nav>
+            <li>
+              <StyledLink activeClassName="active" to="/gallery">
+                Gallery
+              </StyledLink>
+            </li>
+            <li>
+              <StyledLink activeClassName="active" to="/registry">
+                Registry
+              </StyledLink>
+            </li>
+            <li>
+              <StyledLink activeClassName="active" to="/faqs">
+                FAQs
+              </StyledLink>
+            </li>
+          </StyledNav>
         </Navbar.Collapse>
-      </Navbar>
+      </NavBar>
     </StyledSticky>
   </NavHeader>
 );

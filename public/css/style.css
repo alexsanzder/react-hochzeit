@@ -243,38 +243,6 @@ section.img-bg-5 {
 }
 
 /* 
-	2. Navigation
- */
-#nav {
-  font-family: "Oswald", Verdana, Geneva, sans-serif;
-  font-size: 20px;
-  z-index: 998;
-  width: 100%;
-  padding: 20px 0px;
-}
-.navbar-default {
-  background-color: #fff;
-  border: 0px;
-}
-.nav > li a {
-  padding: 10px 6px;
-}
-.nav > li a:after {
-  content: "/";
-  padding-left: 10px;
-  color: rgba(0, 0, 0, 0.2);
-}
-.navbar-default .navbar-nav > .active > a,
-.navbar-default .navbar-nav > .active > a:focus,
-.navbar-default .navbar-nav > .active > a:hover {
-  color: #62655a;
-  background: none;
-}
-#nav_list {
-  padding: 0px 30px;
-}
-
-/* 
 	8. Section - Gallery
  */
 /*Gallery Nav*/
