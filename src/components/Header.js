@@ -1,7 +1,9 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+
 import styled from 'styled-components';
 
-import { Navbar, Nav, NavItem } from 'react-bootstrap';
+import { Navbar, Nav } from 'react-bootstrap';
 import Sticky from 'react-stickynode';
 
 const Names = styled.ul`
@@ -56,27 +58,15 @@ const Header = () => (
         </Navbar.Header>
         <Navbar.Collapse>
           <Nav pullRight>
-            <NavItem eventKey={1} href="#home">
-              Home
-            </NavItem>
-            <NavItem eventKey={2} href="#couple">
-              Couple
-            </NavItem>
-            <NavItem eventKey={3} href="#our-story">
-              Our Story
-            </NavItem>
-            <NavItem eventKey={4} href="#gallery">
-              Gallery
-            </NavItem>
-            <NavItem eventKey={5} href="#featured-people">
-              Featured People
-            </NavItem>
-            <NavItem eventKey={6} href="#gift-registry">
-              Gifts
-            </NavItem>
-            <NavItem eventKey={7} href="#rsvp">
-              RSVP
-            </NavItem>
+            <li>
+              <Link to="/">Home</Link>
+            </li>
+            <li>
+              <Link to="/gallery">Gallery</Link>
+            </li>
+            <li>
+              <Link to="/rsvp">RSVP</Link>
+            </li>
           </Nav>
         </Navbar.Collapse>
       </Navbar>

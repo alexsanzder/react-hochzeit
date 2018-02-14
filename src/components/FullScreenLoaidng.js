@@ -1,5 +1,4 @@
 import React from 'react';
-import './rolling.css';
 
 const FullScreenLoaidng = () => (
   <div id="fullscreenloading">
