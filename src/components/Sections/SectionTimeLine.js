@@ -3,7 +3,9 @@ import styled from 'styled-components';
 
 import { Grid, Row, Col } from 'react-bootstrap';
 
-const Wrapper = styled.section``;
+const StyledSection = styled.section`
+  padding: 120px 0px;
+`;
 
 const FinalFrase = styled.div`
   font-size: 28px;
@@ -134,7 +136,7 @@ const TimeLineList = styled.ul`
 `;
 
 const SectionTimeLine = () => (
-  <Wrapper>
+  <StyledSection>
     <Grid>
       <Row>
         <Col md={8} mdOffset={2} xs={12} className="text-center">
@@ -269,7 +271,7 @@ const SectionTimeLine = () => (
         </Col>
       </Row>
     </Grid>
-  </Wrapper>
+  </StyledSection>
 );
 
 export default SectionTimeLine;

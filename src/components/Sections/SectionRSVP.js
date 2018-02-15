@@ -1,100 +1,82 @@
 import React from 'react';
-
 import styled from 'styled-components';
 
-import { Grid, Row, Col, Checkbox } from 'react-bootstrap';
+import { Grid, Row, Col } from 'react-bootstrap';
 
-/* 
-#ajaxForm input[type="checkbox"] {
-  display: none;
-}
-#ajaxForm label.checkbox-button {
-  font-family: "Oswald", Verdana, Geneva, sans-serif;
-  font-size: 23px;
-  cursor: pointer;
-  font-weight: normal;
-}
-#ajaxForm label.checkbox-button:hover {
-  color: #c3a180;
-}
-#ajaxForm input[type="checkbox"]:checked + label.checkbox-button {
-  color: #c3a180;
-}
-input[type="checkbox"]:checked + label.checkbox-button i.fa::before {
-  content: "\f058";
-}
- */
-
-const Toggle = styled(Checkbox)`
-  label {
-    font-family: 'Oswald', Verdana, Geneva, sans-serif;
-    font-size: 23px;
-    cursor: pointer;
-    font-weight: normal;
-    &:hover {
-      color: #c3a180;
-    }
-    &::before {
-      letter-spacing: 10px;
-      display: none;
-      font-family: 'Font Awesome 5 Solid';
-      content: '\f204';
-    }
-    .svg-inline--fa {
-      margin-right: 0.3em;
-    }
+const Form = styled.form`
+  input,
+  textarea {
+    border: 2px solid #b6b7b7;
+    color: #363b3f;
+    background: transparent none repeat scroll 0% 0%;
+    padding: 15px 30px;
+    margin: 0px 3% 20px 0px;
+    resize: none;
+    border-radius: 0px;
+    height: auto;
   }
-  input {
-    &:checked + label {
-      color: #c3a180;
-      &::before {
-        display: none;
-        font-family: 'Font Awesome 5 Solid';
-        color: red;
-        font-size: 100px;
-        content: '\f205';
-      }
-    }
+  .form-control:focus {
+    border-color: #c3a180;
+    outline: 0px none;
+    box-shadow: none;
+  }
+  .has-error input,
+  .has-error input:focus,
+  .has-error textarea,
+  .has-error textarea:focus {
+    margin-bottom: 0px;
+    border-color: #a94442;
   }
 `;
+
 const Label = styled.label`
   font-family: 'Oswald', Verdana, Geneva, sans-serif;
   font-size: 23px;
   cursor: pointer;
   font-weight: normal;
+  p {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 300;
+    font-size: 14px;
+  }
   &:hover {
     color: #c3a180;
   }
   &::before {
-    letter-spacing: 10px;
-    display: none;
-    font-family: 'Font Awesome 5 Solid';
-    content: '\f204';
-  }
-  .svg-inline--fa {
-    margin-right: 0.3em;
+    font-family: 'Font Awesome 5 Free';
+    font-weight: regular;
+    content: '\f111';
+    margin-right: 0.2em;
   }
 `;
 
 const Input = styled.input`
   display: none;
+
   &:checked + ${Label} {
     color: #c3a180;
+    font-size: 24px;
+
+    p {
+      font-weight: normal;
+    }
     &::before {
-      display: none;
-      font-family: 'Font Awesome 5 Solid';
-      color: red;
-      font-size: 100px;
-      content: '\f205';
+      font-family: 'Font Awesome 5 Free';
+      font-weight: 900;
+      content: '\f058';
     }
   }
 `;
 
+const StyledSection = styled.section`
+  padding: 120px 0px;
+`;
+
 const SectionRSVP = () => (
-  <section id="rsvp">
-    <div className="container">
-      <div className="row">
-        <div className="col-md-10 col-md-offset-1 col-xs-12 text-center">
+  <StyledSection>
+    <Grid>
+      <Row>
+        <Col md={10} mdOffset={1} xs={12} className="text-center">
           <div className="title-block">
             <h1>
               Are You{' '}
@@ -110,34 +92,40 @@ const SectionRSVP = () => (
               </em>
             </p>
           </div>
-        </div>
-        <div className="col-md-8 col-md-offset-2 col-xs-12 text-center">
-          <form id="ajaxForm" data-toggle="validator">
-            <div className="row bot-mrg-20">
-              <div className="col-md-4 text-center">
+        </Col>
+        <Col md={8} mdOffset={2} xs={12} className="text-center">
+          <Form>
+            <Row className="bot-mrg-20">
+              <Col md={4} className="text-center">
                 <Input type="checkbox" id="checkbox-1" name="events[]" value="Pre-Wedding Dinner" />
-                <Label htmlFor="checkbox-1">Pre-Wedding Dinner</Label>
-                <p>
-                  Lars Homestead, <br /> Schott el-Djerid <br />Alderaan.
-                </p>
-              </div>
-              <div className="col-md-4 text-center">
-                <Toggle title="Ceremony">Ceremony</Toggle>
-
-                <p>
-                  Lars Homestead, <br /> Schott el-Djerid <br />Alderaan.
-                </p>
-              </div>
-              <div className="col-md-4 text-center">
+                <Label htmlFor="checkbox-1">
+                  Pre-Wedding Dinner
+                  <p>
+                    Lars Homestead, <br /> Schott el-Djerid <br />Alderaan.
+                  </p>
+                </Label>
+              </Col>
+              <Col md={4} className="text-center">
+                <Input type="checkbox" id="checkbox-2" name="events[]" value="Ceremonyr" />
+                <Label htmlFor="checkbox-2">
+                  Ceremony
+                  <p>
+                    Lars Homestead, <br /> Schott el-Djerid <br />Alderaan.
+                  </p>
+                </Label>
+              </Col>
+              <Col md={4} className="text-center">
                 <Input type="checkbox" id="checkbox-3" name="events[]" value="Party" />
-                <Label htmlFor="checkbox-3">Party</Label>
-                <p>
-                  Lars Homestead, <br /> Schott el-Djerid <br />Alderaan.
-                </p>
-              </div>
-            </div>
-            <div className="row">
-              <div className="col-md-6">
+                <Label htmlFor="checkbox-3">
+                  Party
+                  <p>
+                    Lars Homestead, <br /> Schott el-Djerid <br />Alderaan.
+                  </p>
+                </Label>
+              </Col>
+            </Row>
+            <Row>
+              <div md={6}>
                 <div className="form-group">
                   <input
                     type="text"
@@ -149,7 +137,7 @@ const SectionRSVP = () => (
                   <div className="help-block with-errors" />
                 </div>
               </div>
-              <div className="col-md-6">
+              <div md={6}>
                 <div className="form-group">
                   <input
                     type="email"
@@ -161,9 +149,9 @@ const SectionRSVP = () => (
                   <div className="help-block with-errors" />
                 </div>
               </div>
-            </div>
-            <div className="row">
-              <div className="col-md-12">
+            </Row>
+            <Row>
+              <div md={12}>
                 <div className="form-group">
                   <textarea
                     rows="5"
@@ -175,16 +163,16 @@ const SectionRSVP = () => (
                   <div className="help-block with-errors" />
                 </div>
               </div>
-            </div>
-          </form>
+            </Row>
+          </Form>
 
           <button className="btn btn-primary btn-lg" id="ajaxFormSubmit">
             I´m Attending
           </button>
-        </div>
-      </div>
-    </div>
-  </section>
+        </Col>
+      </Row>
+    </Grid>
+  </StyledSection>
 );
 
 export default SectionRSVP;

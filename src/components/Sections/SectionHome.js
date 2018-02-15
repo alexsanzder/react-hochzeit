@@ -103,10 +103,11 @@ const Place = styled.div`
   }
 `;
 
-const Wrapper = styled.section`
+const StyledSection = styled.section`
   background: url('http://via.placeholder.com/1100x619') no-repeat;
   background-attachment: fixed;
   background-size: cover;
+  padding: 120px 0px;
   text-align: center;
   height: 800px;
   padding: 50px 0px;
@@ -117,7 +118,7 @@ const Wrapper = styled.section`
   }
 `;
 const SectionHome = () => (
-  <Wrapper>
+  <StyledSection>
     <Grid>
       <Row>
         <Col xs={12}>
@@ -142,7 +143,7 @@ const SectionHome = () => (
         </Col>
       </Row>
     </Grid>
-  </Wrapper>
+  </StyledSection>
 );
 
 export default SectionHome;
