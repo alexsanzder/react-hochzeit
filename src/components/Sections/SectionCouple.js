@@ -36,8 +36,15 @@ const SocialIcons = styled.div`
   }
 `;
 
+const ImageCircle = styled.img`
+  border: 20px solid #fff;
+`;
+const StyledSection = styled.section`
+  padding: 120px 0px;
+`;
+
 const SectionCouple = () => (
-  <section id="couple" className="bg-gray-1">
+  <StyledSection className="bg-gray-1">
     <Grid>
       <Row>
         <Col md={6} xs={12} className="text-center">
@@ -45,7 +52,7 @@ const SectionCouple = () => (
             <h2>
               Padme <span>Amidala</span>
             </h2>
-            <img
+            <ImageCircle
               src="http://via.placeholder.com/323x323"
               className="img-responsive img-circle"
               alt="Bride"
@@ -77,7 +84,7 @@ const SectionCouple = () => (
             <h2>
               Anakin <span>Skywalker</span>
             </h2>
-            <img
+            <ImageCircle
               src="http://via.placeholder.com/323x323"
               className="img-responsive img-circle"
               alt="Groom"
@@ -106,7 +113,7 @@ const SectionCouple = () => (
         </Col>
       </Row>
     </Grid>
-  </section>
+  </StyledSection>
 );
 
 export default SectionCouple;

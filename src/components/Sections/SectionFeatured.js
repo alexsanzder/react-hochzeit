@@ -1,7 +1,11 @@
 import React from 'react';
+import styled from 'styled-components';
 
+const StyledSection = styled.section`
+  padding: 120px 0px;
+`;
 const SectionFeatured = () => (
-  <section id="featured-people">
+  <StyledSection id="featured-people">
     <div className="container">
       <div className="row">
         <div className="col-md-8 col-md-offset-2 col-xs-12 text-center">
@@ -154,7 +158,7 @@ const SectionFeatured = () => (
         </div>
       </div>
     </div>
-  </section>
+  </StyledSection>
 );
 
 export default SectionFeatured;

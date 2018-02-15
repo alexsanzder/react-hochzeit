@@ -25,7 +25,7 @@ const CarouselItem = styled(Carousel.Item)`
   padding: 30px;
 `;
 
-const Wrapper = styled.section`
+const StyledSection = styled.section`
   background: url('http://via.placeholder.com/1100x619') no-repeat;
   padding: 120px 0px;
   background-attachment: fixed;
@@ -33,7 +33,7 @@ const Wrapper = styled.section`
 `;
 
 const SectionGifts = () => (
-  <Wrapper>
+  <StyledSection>
     <Grid>
       <Row>
         <Col md={10} mdOffset={1} xs={12} className="text-center">
@@ -66,7 +66,7 @@ const SectionGifts = () => (
         </Col>
       </Row>
     </Grid>
-  </Wrapper>
+  </StyledSection>
 );
 
 export default SectionGifts;

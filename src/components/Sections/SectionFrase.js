@@ -1,8 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const Wrapper = styled.section`
+const StyledSection = styled.section`
   background: url('http://via.placeholder.com/1100x619') no-repeat;
+  padding: 120px 0px;
   background-attachment: fixed;
   background-size: cover;
   color: #fff;
@@ -16,7 +17,7 @@ const Wrapper = styled.section`
 `;
 
 const SectionFrase = () => (
-  <Wrapper data-stellar-background-ratio="0.5">
+  <StyledSection>
     <div className="container">
       <div className="row">
         <div className="col-md-8 col-md-offset-2 col-xs-12 text-center">
@@ -28,7 +29,7 @@ const SectionFrase = () => (
         </div>
       </div>
     </div>
-  </Wrapper>
+  </StyledSection>
 );
 
 export default SectionFrase;
