@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Grid, Row, Col } from 'react-bootstrap';
+import { Container, Row, Col } from 'reactstrap';
 
 import Countdown from 'react-countdown-now';
 import CircularProgressbar from 'react-circular-progressbar';
@@ -25,6 +25,7 @@ const TimeCircles = styled.div`
 
 const TimeTilte = styled.h4`
   margin: 0;
+  font-size: 13px;
   line-height: 0.5;
   text-transform: uppercase;
 `;
@@ -117,14 +118,14 @@ const renderer = ({ days, hours, minutes, seconds, completed }) => {
 
 const SectionCounter = () => (
   <StyledSection>
-    <Grid>
+    <Container>
       <Row>
-        <Col md={8} mdOffset={2} xs={12} className="text-center">
+        <Col md={{ size: 8, offset: 2 }} xs={12} className="text-center">
           <h2>Counting the minutes for the big day!</h2>
           <Countdown date={'May 26, 2018 12:00:00'} renderer={renderer} />
         </Col>
       </Row>
-    </Grid>
+    </Container>
   </StyledSection>
 );
 

@@ -1,6 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 
+import { Container, Row, Col } from 'reactstrap';
+
 const StyledSection = styled.section`
   background: url('http://via.placeholder.com/1100x619') no-repeat;
   padding: 120px 0px;
@@ -18,17 +20,17 @@ const StyledSection = styled.section`
 
 const SectionFrase = () => (
   <StyledSection>
-    <div className="container">
-      <div className="row">
-        <div className="col-md-8 col-md-offset-2 col-xs-12 text-center">
+    <Container>
+      <Row>
+        <Col md={{ size: 8, offset: 2 }} xs={12} className="text-center">
           <h2>
             <i className="fa fa-quote-left" aria-hidden="true" /> I thought we had decided not to
             fall in love. That we'd be forced to live a lie, and that it would destroy our lives...{' '}
             <i className="fa fa-quote-right" aria-hidden="true" />
           </h2>
-        </div>
-      </div>
-    </div>
+        </Col>
+      </Row>
+    </Container>
   </StyledSection>
 );
 

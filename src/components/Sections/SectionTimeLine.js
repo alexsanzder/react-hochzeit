@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import { Grid, Row, Col } from 'react-bootstrap';
+import { Container, Row, Col } from 'reactstrap';
 
 const StyledSection = styled.section`
   padding: 120px 0px;
@@ -137,9 +137,9 @@ const TimeLineList = styled.ul`
 
 const SectionTimeLine = () => (
   <StyledSection>
-    <Grid>
+    <Container>
       <Row>
-        <Col md={8} mdOffset={2} xs={12} className="text-center">
+        <Col md={{ size: 8, offset: 2 }} xs={12} className="text-center">
           <div className="title-block">
             <h1>
               Our{' '}
@@ -170,11 +170,7 @@ const SectionTimeLine = () => (
               </TimeLineTitle>
             </div>
             <TimeLineBody className="text-center">
-              <img
-                src="http://via.placeholder.com/700x466"
-                className="img-responsive"
-                alt="Our Story"
-              />
+              <img src="http://via.placeholder.com/700x466" className="img-fluid" alt="Our Story" />
               <h2 className="timeline-title">Our first meeting</h2>
               <p>
                 Mussum ipsum cacilds, vidis litro abertis. Consetis adipiscings elitis. Pra lá ,
@@ -194,11 +190,7 @@ const SectionTimeLine = () => (
               </TimeLineTitle>
             </div>
             <TimeLineBody className="text-center">
-              <img
-                src="http://via.placeholder.com/700x466"
-                className="img-responsive"
-                alt="Our Story"
-              />
+              <img src="http://via.placeholder.com/700x466" className="img-fluid" alt="Our Story" />
               <h2 className="timeline-title">Great witer days</h2>
               <p>
                 Mussum ipsum cacilds, vidis litro abertis. Mauris porttitor non sem eu faucibus.
@@ -220,11 +212,7 @@ const SectionTimeLine = () => (
               </TimeLineTitle>
             </div>
             <TimeLineBody className="text-center">
-              <img
-                src="http://via.placeholder.com/700x466"
-                className="img-responsive"
-                alt="Our Story"
-              />
+              <img src="http://via.placeholder.com/700x466" className="img-fluid" alt="Our Story" />
               <h2 className="timeline-title">Our first meeting</h2>
               <p>
                 Mussum ipsum cacilds, vidis litro abertis. Consetis adipiscings elitis. Pra lá ,
@@ -244,11 +232,7 @@ const SectionTimeLine = () => (
               </TimeLineTitle>
             </div>
             <TimeLineBody className="text-center">
-              <img
-                src="http://via.placeholder.com/700x466"
-                className="img-responsive"
-                alt="Our Story"
-              />
+              <img src="http://via.placeholder.com/700x466" className="img-fluid" alt="Our Story" />
               <h2 className="timeline-title">Great witer days</h2>
               <p>
                 Mussum ipsum cacilds, vidis litro abertis. Mauris porttitor non sem eu faucibus.
@@ -264,13 +248,13 @@ const SectionTimeLine = () => (
         </TimeLineItem>
       </TimeLineList>
       <Row>
-        <Col md={8} mdOffset={2} xs={12} className="text-center">
+        <Col md={{ size: 8, offset: 2 }} xs={12} className="text-center">
           <FinalFrase>
             Now we are ready for the <span>next step...</span>
           </FinalFrase>
         </Col>
       </Row>
-    </Grid>
+    </Container>
   </StyledSection>
 );
 

@@ -1,9 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import { Grid, Row, Col } from 'react-bootstrap';
+import { Container, Row, Col } from 'reactstrap';
 
-const Wrapper = styled.section`
+const StyledSection = styled.section`
   background: url('http://via.placeholder.com/1100x619') no-repeat;
   padding: 120px 0px;
   background-attachment: fixed;
@@ -59,10 +59,10 @@ const Copyright = styled.div`
 `;
 
 const Footer = () => (
-  <Wrapper>
-    <Grid>
+  <StyledSection>
+    <Container>
       <Row>
-        <Col md={10} mdOffset={1} xs={12} className="text-center">
+        <Col md={{ size: 10, offset: 1 }} xs={12} className="text-center">
           <h1>Thank You!</h1>
           <Names>
             <li>Padme</li>
@@ -77,8 +77,8 @@ const Footer = () => (
           </Copyright>
         </Col>
       </Row>
-    </Grid>
-  </Wrapper>
+    </Container>
+  </StyledSection>
 );
 
 export default Footer;

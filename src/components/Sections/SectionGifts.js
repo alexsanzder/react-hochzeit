@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import { Grid, Row, Col, Carousel } from 'react-bootstrap';
+import { Container, Row, Col, Carousel, CarouselItem } from 'reactstrap';
 
 const Icon = styled.i`
   width: 30px;
@@ -19,7 +19,7 @@ const CorouselImage = styled.img`
   width: 100%;
   height: auto;
 `;
-const CarouselItem = styled(Carousel.Item)`
+const CarouselSlide = styled(CarouselItem)`
   margin: 5px;
   background: #fff;
   padding: 30px;
@@ -34,9 +34,9 @@ const StyledSection = styled.section`
 
 const SectionGifts = () => (
   <StyledSection>
-    <Grid>
+    <Container>
       <Row>
-        <Col md={10} mdOffset={1} xs={12} className="text-center">
+        <Col md={{ size: 10, offset: 1 }} xs={12} className="text-center">
           <div className="title-block">
             <h1>
               Gifts{' '}
@@ -49,23 +49,9 @@ const SectionGifts = () => (
               <em>We are registered at the following shops with our names.</em>
             </p>
           </div>
-          <Carousel
-            prevIcon={<Icon className="fas fa-arrow-circle-left" />}
-            nextIcon={<Icon className="fas fa-arrow-circle-right" />}
-          >
-            <CarouselItem>
-              <CorouselImage src="http://via.placeholder.com/249x67" alt="" />
-            </CarouselItem>
-            <CarouselItem>
-              <CorouselImage src="http://via.placeholder.com/249x67" alt="" />
-            </CarouselItem>
-            <CarouselItem>
-              <CorouselImage src="http://via.placeholder.com/249x67" alt="" />
-            </CarouselItem>
-          </Carousel>
         </Col>
       </Row>
-    </Grid>
+    </Container>
   </StyledSection>
 );
 

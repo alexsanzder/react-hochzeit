@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import { Grid, Row, Col } from 'react-bootstrap';
+import { Container, Row, Col } from 'reactstrap';
 
 const Title = styled.h3`
   span {
@@ -119,7 +119,7 @@ const StyledSection = styled.section`
 `;
 const SectionHome = () => (
   <StyledSection>
-    <Grid>
+    <Container>
       <Row>
         <Col xs={12}>
           <Title>
@@ -142,7 +142,7 @@ const SectionHome = () => (
           </Place>
         </Col>
       </Row>
-    </Grid>
+    </Container>
   </StyledSection>
 );
 
