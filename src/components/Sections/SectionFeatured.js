@@ -1,14 +1,16 @@
 import React from 'react';
 import styled from 'styled-components';
 
+import { Container, Row, Col } from 'reactstrap';
+
 const StyledSection = styled.section`
   padding: 120px 0px;
 `;
 const SectionFeatured = () => (
   <StyledSection id="featured-people">
-    <div className="container">
-      <div className="row">
-        <div className="col-md-8 col-md-offset-2 col-xs-12 text-center">
+    <Container>
+      <Row>
+        <Col md={{ size: 8, offset: 2 }} xs={12} className="text-center">
           <div className="title-block">
             <h1>
               Featured{' '}
@@ -25,14 +27,14 @@ const SectionFeatured = () => (
               </em>
             </p>
           </div>
-        </div>
-      </div>
-      <div className="row">
-        <div className="col-sm-6 col-xs-12">
+        </Col>
+      </Row>
+      <Row>
+        <Col sm={6} xs={12}>
           <div className="featured">
             <img
               src="http://via.placeholder.com/323x323"
-              className="img-responsive img-circle"
+              className="img-fluid rounded-circle"
               alt="Groom"
             />
             <div className="text">
@@ -53,7 +55,7 @@ const SectionFeatured = () => (
           <div className="featured">
             <img
               src="http://via.placeholder.com/323x323"
-              className="img-responsive img-circle"
+              className="img-fluid rounded-circle"
               alt="Groom"
             />
             <div className="text">
@@ -74,7 +76,7 @@ const SectionFeatured = () => (
           <div className="featured">
             <img
               src="http://via.placeholder.com/323x323"
-              className="img-responsive img-circle"
+              className="img-fluid rounded-circle"
               alt="Groom"
             />
             <div className="text">
@@ -91,12 +93,12 @@ const SectionFeatured = () => (
               </p>
             </div>
           </div>
-        </div>
+        </Col>
         <div className="col-sm-6 col-xs-12 featured-right">
           <div className="featured">
             <img
               src="http://via.placeholder.com/323x323"
-              className="img-responsive img-circle"
+              className="img-fluid rounded-circle"
               alt="Groom"
             />
             <div className="text">
@@ -117,7 +119,7 @@ const SectionFeatured = () => (
           <div className="featured">
             <img
               src="http://via.placeholder.com/323x323"
-              className="img-responsive img-circle"
+              className="img-fluid rounded-circle"
               alt="Groom"
             />
             <div className="text">
@@ -138,7 +140,7 @@ const SectionFeatured = () => (
           <div className="featured">
             <img
               src="http://via.placeholder.com/323x323"
-              className="img-responsive img-circle"
+              className="img-fluid rounded-circle"
               alt="Groom"
             />
             <div className="text">
@@ -156,8 +158,8 @@ const SectionFeatured = () => (
             </div>
           </div>
         </div>
-      </div>
-    </div>
+      </Row>
+    </Container>
   </StyledSection>
 );
 

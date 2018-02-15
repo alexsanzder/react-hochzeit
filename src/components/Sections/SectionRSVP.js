@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import { Grid, Row, Col } from 'react-bootstrap';
+import { Container, Row, Col, FormGroup, Button, Input } from 'reactstrap';
 
 const Form = styled.form`
   input,
@@ -29,7 +29,7 @@ const Form = styled.form`
   }
 `;
 
-const Label = styled.label`
+const StyledLabel = styled.label`
   font-family: 'Oswald', Verdana, Geneva, sans-serif;
   font-size: 23px;
   cursor: pointer;
@@ -50,10 +50,10 @@ const Label = styled.label`
   }
 `;
 
-const Input = styled.input`
+const StyledInput = styled.input`
   display: none;
 
-  &:checked + ${Label} {
+  &:checked + ${StyledLabel} {
     color: #c3a180;
     font-size: 24px;
 
@@ -74,9 +74,9 @@ const StyledSection = styled.section`
 
 const SectionRSVP = () => (
   <StyledSection>
-    <Grid>
+    <Container>
       <Row>
-        <Col md={10} mdOffset={1} xs={12} className="text-center">
+        <Col md={{ size: 10, offset: 1 }} xs={12} className="text-center">
           <div className="title-block">
             <h1>
               Are You{' '}
@@ -93,85 +93,67 @@ const SectionRSVP = () => (
             </p>
           </div>
         </Col>
-        <Col md={8} mdOffset={2} xs={12} className="text-center">
+        <Col md={{ size: 8, offset: 2 }} xs={12} className="text-center">
           <Form>
             <Row className="bot-mrg-20">
               <Col md={4} className="text-center">
-                <Input type="checkbox" id="checkbox-1" name="events[]" value="Pre-Wedding Dinner" />
-                <Label htmlFor="checkbox-1">
+                <StyledInput
+                  type="checkbox"
+                  id="checkbox-1"
+                  name="events[]"
+                  value="Pre-Wedding Dinner"
+                />
+                <StyledLabel htmlFor="checkbox-1">
                   Pre-Wedding Dinner
                   <p>
                     Lars Homestead, <br /> Schott el-Djerid <br />Alderaan.
                   </p>
-                </Label>
+                </StyledLabel>
               </Col>
               <Col md={4} className="text-center">
-                <Input type="checkbox" id="checkbox-2" name="events[]" value="Ceremonyr" />
-                <Label htmlFor="checkbox-2">
+                <StyledInput type="checkbox" id="checkbox-2" name="events[]" value="Ceremonyr" />
+                <StyledLabel htmlFor="checkbox-2">
                   Ceremony
                   <p>
                     Lars Homestead, <br /> Schott el-Djerid <br />Alderaan.
                   </p>
-                </Label>
+                </StyledLabel>
               </Col>
               <Col md={4} className="text-center">
-                <Input type="checkbox" id="checkbox-3" name="events[]" value="Party" />
-                <Label htmlFor="checkbox-3">
+                <StyledInput type="checkbox" id="checkbox-3" name="events[]" value="Party" />
+                <StyledLabel htmlFor="checkbox-3">
                   Party
                   <p>
                     Lars Homestead, <br /> Schott el-Djerid <br />Alderaan.
                   </p>
-                </Label>
+                </StyledLabel>
               </Col>
             </Row>
             <Row>
-              <div md={6}>
-                <div className="form-group">
-                  <input
-                    type="text"
-                    className="form-control"
-                    name="name"
-                    placeholder="Your Name"
-                    required
-                  />
-                  <div className="help-block with-errors" />
-                </div>
-              </div>
-              <div md={6}>
-                <div className="form-group">
-                  <input
-                    type="email"
-                    className="form-control"
-                    name="email"
-                    placeholder="Your Email"
-                    required
-                  />
-                  <div className="help-block with-errors" />
-                </div>
-              </div>
+              <Col md={6}>
+                <FormGroup>
+                  <Input type="name" name="name" placeholder="Your Name" id="rsvpName" />
+                </FormGroup>
+              </Col>
+              <Col md={6}>
+                <FormGroup>
+                  <Input type="email" name="email" placeholder="Your Email" id="rsvpEmail" />
+                </FormGroup>
+              </Col>
             </Row>
             <Row>
-              <div md={12}>
-                <div className="form-group">
-                  <textarea
-                    rows="5"
-                    className="form-control"
-                    name="message"
-                    placeholder="Write your message...​"
-                    required
-                  />
-                  <div className="help-block with-errors" />
-                </div>
-              </div>
+              <Col md={12}>
+                <FormGroup>
+                  <Input type="textarea" rows="5" name="text" placeholder="Write your message..." id="rsvpText" />
+                </FormGroup>
+              </Col>
             </Row>
           </Form>
 
-          <button className="btn btn-primary btn-lg" id="ajaxFormSubmit">
-            I´m Attending
-          </button>
+          <Button className="btn btn-primary btn-lg">I´m Attending</Button>
         </Col>
       </Row>
-    </Grid>
+    </Container>
   </StyledSection>
 );
 

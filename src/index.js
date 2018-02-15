@@ -3,6 +3,8 @@ import ReactDOM from 'react-dom';
 import { BrowserRouter } from 'react-router-dom';
 import { injectGlobal } from 'styled-components';
 
+import 'bootstrap/dist/css/bootstrap.css';
+
 import ScrollToTop from './components/ScrollToTop';
 import App from './components/App';
 

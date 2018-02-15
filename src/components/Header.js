@@ -1,12 +1,11 @@
 import React from 'react';
+import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
 
-import styled from 'styled-components';
-
-import { Navbar, Nav } from 'react-bootstrap';
 import Sticky from 'react-stickynode';
+import { Container, Navbar, Nav, NavbarToggler, Collapse } from 'reactstrap';
 
-const NavBar = styled(Navbar)`
+const StyledNavbar = styled(Navbar)`
   font-family: 'Oswald', Verdana, Geneva, sans-serif;
   font-size: 20px;
   z-index: 998;
@@ -20,11 +19,22 @@ const StyledNav = styled(Nav)`
   padding: 0px 10px;
 `;
 
+const StyledNavBrand = styled(NavLink)`
+  &:hover {
+    text-decoration: none;
+  }
+`;
 const StyledLink = styled(NavLink)`
+  color: #777;
   padding: 10px 6px;
   &.active {
     color: #c3a180 !important;
     background: none;
+  }
+  &:hover {
+    color: #333;
+    text-decoration: none;
+    background-color: transparent;
   }
   &::after {
     content: '/';
@@ -34,6 +44,7 @@ const StyledLink = styled(NavLink)`
 `;
 
 const Names = styled.ul`
+  color: #777;
   list-style: none;
   display: inline;
   font-size: 30px;
@@ -41,6 +52,11 @@ const Names = styled.ul`
   padding: 0px;
   li {
     display: inline-block;
+    &:hover {
+      color: #c3a180;
+      text-decoration: none;
+      background-color: transparent;
+    }
   }
   @media (max-width: 767px) {
     font-size: 19px;
@@ -60,6 +76,11 @@ const Circle = styled.li`
   margin: 0px;
   color: #fff;
   position: relative;
+  &:hover {
+    color: #333;
+    text-decoration: none;
+    background-color: transparent;
+  }
 `;
 
 const StyledSticky = styled(Sticky)`
@@ -69,59 +90,67 @@ const StyledSticky = styled(Sticky)`
 
 const NavHeader = styled.header``;
 
-const Header = () => (
-  <NavHeader>
-    <StyledSticky innerZ="1200">
-      <NavBar collapseOnSelect>
-        <Navbar.Header>
-          <Navbar.Brand>
-            <a href="index.html#">
-              <Names>
-                <li>Padme</li>
-                <Circle>&amp;</Circle>
-                <li>Anakin</li>
-              </Names>
-            </a>
-          </Navbar.Brand>
-          <Navbar.Toggle />
-        </Navbar.Header>
-        <Navbar.Collapse>
-          <StyledNav pullRight>
-            <li>
-              <StyledLink exact activeClassName="active" to="/">
-                Home
-              </StyledLink>
-            </li>
-            <li>
-              <StyledLink activeClassName="active" to="/wedding">
-                Wedding
-              </StyledLink>
-            </li>
-            <li>
-              <StyledLink activeClassName="active" to="/accommodation">
-                Accommodation
-              </StyledLink>
-            </li>
-            <li>
-              <StyledLink activeClassName="active" to="/gallery">
-                Gallery
-              </StyledLink>
-            </li>
-            <li>
-              <StyledLink activeClassName="active" to="/registry">
-                Registry
-              </StyledLink>
-            </li>
-            <li>
-              <StyledLink activeClassName="active" to="/faqs">
-                FAQs
-              </StyledLink>
-            </li>
-          </StyledNav>
-        </Navbar.Collapse>
-      </NavBar>
-    </StyledSticky>
-  </NavHeader>
-);
+export default class Header extends React.Component {
+  state = {
+    isOpen: false,
+  };
 
-export default Header;
+  toggle = () => {
+    this.setState({
+      isOpen: !this.state.isOpen,
+    });
+  };
+
+  render() {
+    return (
+      <NavHeader>
+        <StyledSticky innerZ="1200">
+          <StyledNavbar light expand="md">
+            <Container>
+              <StyledNavBrand exact to="/">
+                <Names>
+                  <li>Padme</li> <Circle>&amp;</Circle> <li>Anakin</li>
+                </Names>
+              </StyledNavBrand>
+              <NavbarToggler onClick={this.toggle} />
+              <Collapse isOpen={this.state.isOpen} navbar>
+                <StyledNav className="ml-auto">
+                  <li>
+                    <StyledLink exact activeClassName="active" to="/">
+                      Home
+                    </StyledLink>
+                  </li>
+                  <li>
+                    <StyledLink activeClassName="active" to="/wedding">
+                      Wedding
+                    </StyledLink>
+                  </li>
+                  <li>
+                    <StyledLink activeClassName="active" to="/accommodation">
+                      Accommodation
+                    </StyledLink>
+                  </li>
+                  <li>
+                    <StyledLink activeClassName="active" to="/gallery">
+                      Gallery
+                    </StyledLink>
+                  </li>
+                  <li>
+                    <StyledLink activeClassName="active" to="/registry">
+                      Registry
+                    </StyledLink>
+                  </li>
+                  <li>
+                    <StyledLink activeClassName="active" to="/faqs">
+                      FAQs
+                    </StyledLink>
+                  </li>
+                </StyledNav>
+              </Collapse>
+            </Container>
+          </StyledNavbar>
+        </StyledSticky>
+      </NavHeader>
+    );
+  }
+}

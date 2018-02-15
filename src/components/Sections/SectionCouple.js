@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import { Grid, Row, Col } from 'react-bootstrap';
+import { Container, Row, Col } from 'reactstrap';
 
 const Profile = styled.div`
   img {
@@ -45,7 +45,7 @@ const StyledSection = styled.section`
 
 const SectionCouple = () => (
   <StyledSection className="bg-gray-1">
-    <Grid>
+    <Container>
       <Row>
         <Col md={6} xs={12} className="text-center">
           <Profile>
@@ -54,7 +54,7 @@ const SectionCouple = () => (
             </h2>
             <ImageCircle
               src="http://via.placeholder.com/323x323"
-              className="img-responsive img-circle"
+              className="img-fluid rounded-circle"
               alt="Bride"
             />
             <p>
@@ -86,7 +86,7 @@ const SectionCouple = () => (
             </h2>
             <ImageCircle
               src="http://via.placeholder.com/323x323"
-              className="img-responsive img-circle"
+              className="img-fluid rounded-circle"
               alt="Groom"
             />
             <p>
@@ -112,7 +112,7 @@ const SectionCouple = () => (
           </Profile>
         </Col>
       </Row>
-    </Grid>
+    </Container>
   </StyledSection>
 );
 
