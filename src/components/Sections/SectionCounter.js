@@ -1,5 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
+import { Parallax } from 'react-parallax';
+
 import { Container, Row, Col } from 'reactstrap';
 
 import Countdown from 'react-countdown-now';
@@ -7,7 +9,6 @@ import CircularProgressbar from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
 
 const StyledSection = styled.section`
-  background: url('http://via.placeholder.com/1100x619') no-repeat;
   padding: 120px 0px;
   background-attachment: fixed;
   background-size: cover;
@@ -117,16 +118,18 @@ const renderer = ({ days, hours, minutes, seconds, completed }) => {
 };
 
 const SectionCounter = () => (
-  <StyledSection>
-    <Container>
-      <Row>
-        <Col md={{ size: 8, offset: 2 }} xs={12} className="text-center">
-          <h2>Counting the minutes for the big day!</h2>
-          <Countdown date={'May 26, 2018 12:00:00'} renderer={renderer} />
-        </Col>
-      </Row>
-    </Container>
-  </StyledSection>
+  <Parallax blur={9} bgImage={'http://via.placeholder.com/1100x619'} bgImageAlt="" strength={300}>
+    <StyledSection>
+      <Container>
+        <Row>
+          <Col md={{ size: 8, offset: 2 }} xs={12} className="text-center">
+            <h2>Counting the minutes for the big day!</h2>
+            <Countdown date={'May 26, 2018 12:00:00'} renderer={renderer} />
+          </Col>
+        </Row>
+      </Container>
+    </StyledSection>
+  </Parallax>
 );
 
 export default SectionCounter;

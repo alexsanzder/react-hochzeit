@@ -1,10 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
+import { Parallax } from 'react-parallax';
 
 import { Container, Row, Col } from 'reactstrap';
 
 const StyledSection = styled.section`
-  background: url('http://via.placeholder.com/1100x619') no-repeat;
   padding: 120px 0px;
   background-attachment: fixed;
   background-size: cover;
@@ -59,26 +59,28 @@ const Copyright = styled.div`
 `;
 
 const Footer = () => (
-  <StyledSection>
-    <Container>
-      <Row>
-        <Col md={{ size: 10, offset: 1 }} xs={12} className="text-center">
-          <h1>Thank You!</h1>
-          <Names>
-            <li>Padme</li>
-            <Circle>&amp;</Circle>
-            <li>Anakin</li>
-          </Names>
-          <Copyright>
-            All Rights Reserved © 2018 |{' '}
-            <a href="http://weetsi.com" target="_blank" rel="noopener noreferrer">
-              Alejandro Sánchez
-            </a>
-          </Copyright>
-        </Col>
-      </Row>
-    </Container>
-  </StyledSection>
+  <Parallax blur={9} bgImage={'http://via.placeholder.com/1100x619'} bgImageAlt="" strength={400}>
+    <StyledSection>
+      <Container>
+        <Row>
+          <Col md={{ size: 10, offset: 1 }} xs={12} className="text-center">
+            <h1>Thank You!</h1>
+            <Names>
+              <li>Padme</li>
+              <Circle>&amp;</Circle>
+              <li>Anakin</li>
+            </Names>
+            <Copyright>
+              All Rights Reserved © 2018 |{' '}
+              <a href="http://weetsi.com" target="_blank" rel="noopener noreferrer">
+                Alejandro Sánchez
+              </a>
+            </Copyright>
+          </Col>
+        </Row>
+      </Container>
+    </StyledSection>
+  </Parallax>
 );
 
 export default Footer;
