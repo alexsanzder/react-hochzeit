@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { Parallax } from 'react-parallax';
 
 import { Container, Row, Col } from 'reactstrap';
 
@@ -104,9 +105,8 @@ const Place = styled.div`
 `;
 
 const StyledSection = styled.section`
-  background: url('http://via.placeholder.com/1100x619') no-repeat;
-  background-attachment: fixed;
   background-size: cover;
+  background-attachment: fixed;
   padding: 120px 0px;
   text-align: center;
   height: 800px;
@@ -118,32 +118,34 @@ const StyledSection = styled.section`
   }
 `;
 const SectionHome = () => (
-  <StyledSection>
-    <Container>
-      <Row>
-        <Col xs={12}>
-          <Title>
-            <span />Wir sagen Ja!<span />
-          </Title>
-          <Names>
-            <li>Padme</li>
-            <Circle>&amp;</Circle>
-            <li>Anakin</li>
-          </Names>
-          <Date>
-            <span>01. </span> Juni 2018
-          </Date>
-          <Hour>
-            12:00 <span>pm</span>
-          </Hour>
-          <Place>
-            <h3>Lars Homestead, Schott el-Djerid</h3>
-            <p>Alderaan.</p>
-          </Place>
-        </Col>
-      </Row>
-    </Container>
-  </StyledSection>
+  <Parallax blur={9} bgImage={'http://via.placeholder.com/1100x619'} bgImageAlt="" strength={300}>
+    <StyledSection>
+      <Container>
+        <Row>
+          <Col xs={12}>
+            <Title>
+              <span />Wir sagen Ja!<span />
+            </Title>
+            <Names>
+              <li>Padme</li>
+              <Circle>&amp;</Circle>
+              <li>Anakin</li>
+            </Names>
+            <Date>
+              <span>01. </span> Juni 2018
+            </Date>
+            <Hour>
+              12:00 <span>pm</span>
+            </Hour>
+            <Place>
+              <h3>Lars Homestead, Schott el-Djerid</h3>
+              <p>Alderaan.</p>
+            </Place>
+          </Col>
+        </Row>
+      </Container>
+    </StyledSection>
+  </Parallax>
 );
 
 export default SectionHome;

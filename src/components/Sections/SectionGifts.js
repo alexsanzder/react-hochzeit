@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { Parallax } from 'react-parallax';
 
 import { Container, Row, Col, Carousel, CarouselItem } from 'reactstrap';
 
@@ -26,33 +27,34 @@ const CarouselSlide = styled(CarouselItem)`
 `;
 
 const StyledSection = styled.section`
-  background: url('http://via.placeholder.com/1100x619') no-repeat;
   padding: 120px 0px;
   background-attachment: fixed;
   background-size: cover;
 `;
 
 const SectionGifts = () => (
-  <StyledSection>
-    <Container>
-      <Row>
-        <Col md={{ size: 10, offset: 1 }} xs={12} className="text-center">
-          <div className="title-block">
-            <h1>
-              Gifts{' '}
-              <span>
-                <em>Registry</em>
-              </span>
-            </h1>
-            <div className="divider" />
-            <p>
-              <em>We are registered at the following shops with our names.</em>
-            </p>
-          </div>
-        </Col>
-      </Row>
-    </Container>
-  </StyledSection>
+  <Parallax blur={9} bgImage={'http://via.placeholder.com/1100x619'} bgImageAlt="" strength={300}>
+    <StyledSection>
+      <Container>
+        <Row>
+          <Col md={{ size: 10, offset: 1 }} xs={12} className="text-center">
+            <div className="title-block">
+              <h1>
+                Gifts{' '}
+                <span>
+                  <em>Registry</em>
+                </span>
+              </h1>
+              <div className="divider" />
+              <p>
+                <em>We are registered at the following shops with our names.</em>
+              </p>
+            </div>
+          </Col>
+        </Row>
+      </Container>
+    </StyledSection>
+  </Parallax>
 );
 
 export default SectionGifts;
