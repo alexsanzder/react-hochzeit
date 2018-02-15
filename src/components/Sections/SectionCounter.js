@@ -38,7 +38,6 @@ const Completionist = () => <span>Tadaaaa!</span>;
 
 const renderer = ({ days, hours, minutes, seconds, completed }) => {
   if (completed) {
-    // Render a completed state
     return <Completionist />;
   }
 
