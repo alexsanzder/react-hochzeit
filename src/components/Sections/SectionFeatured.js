@@ -4,6 +4,8 @@ import styled from 'styled-components';
 import { Container, Row, Col } from 'reactstrap';
 
 const StyledSection = styled.section`
+  background-size: cover;
+  background-attachment: fixed;
   padding: 120px 0px;
 `;
 const SectionFeatured = () => (

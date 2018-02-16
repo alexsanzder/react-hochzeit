@@ -2,7 +2,9 @@ import React from 'react';
 import { Switch, Route } from 'react-router-dom';
 
 import Header from './Header';
+import Footer from './Footer';
 
+import Login from './Pages/Login';
 import Home from './Pages/Home';
 import Gallery from './Pages/Gallery';
 import Contact from './Pages/Contact';
@@ -10,7 +12,8 @@ import Contact from './Pages/Contact';
 const Main = () => (
   <main>
     <Switch>
-      <Route exact path="/" component={Home} />
+      <Route exact path="/" component={Login} />
+      <Route path="/home" component={Home} />
       <Route path="/wedding" render={({ match }) => <h1>{match.url}</h1>} />
       <Route
         path="/gallery"
@@ -18,6 +21,7 @@ const Main = () => (
           <React.Fragment>
             <Header />
             <Gallery />
+            <Footer />
           </React.Fragment>
         )}
       />
@@ -27,6 +31,7 @@ const Main = () => (
           <React.Fragment>
             <Header />
             <Contact />
+            <Footer />
           </React.Fragment>
         )}
       />
@@ -35,6 +40,7 @@ const Main = () => (
           <React.Fragment>
             <Header />
             <h1>Page Not Found</h1>
+            <Footer />
           </React.Fragment>
         )}
       />

@@ -12,10 +12,8 @@ globalStyles();
 const App = () => (
   <div>
     <Helmet title="You Are Doing Great" />
-
     <FullScreenLoaidng />
     <Main />
-    <Footer />
   </div>
 );
 export default App;
