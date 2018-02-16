@@ -1,5 +1,5 @@
 import React from 'react';
-import { Switch, Route } from 'react-router-dom';
+import { Switch, Route, Redirect } from 'react-router-dom';
 
 import Header from './Header';
 import Footer from './Footer';
@@ -9,32 +9,43 @@ import Home from './Pages/Home';
 import Gallery from './Pages/Gallery';
 import Contact from './Pages/Contact';
 
+const fakeAuth = {
+  isAuthenticated: false,
+  authenticate(cb) {
+    this.isAuthenticated = true;
+    setTimeout(cb, 100); // fake async
+  },
+  signout(cb) {
+    this.isAuthenticated = false;
+    setTimeout(cb, 100); // fake async
+  },
+};
+
+const PrivateRoute = ({ component: Component, ...rest }) => (
+  <Route
+    {...rest}
+    render={props =>
+      (fakeAuth.isAuthenticated === true ? (
+        <Component fakeAuth={fakeAuth} {...props} />
+      ) : (
+        <Redirect
+          to={{
+            pathname: '/login',
+            state: { from: props.location },
+          }}
+        />
+      ))
+    }
+  />
+);
+
 const Main = () => (
-  <main>
+  <React.Fragment>
     <Switch>
-      <Route exact path="/" component={Login} />
-      <Route path="/home" component={Home} />
-      <Route path="/wedding" render={({ match }) => <h1>{match.url}</h1>} />
-      <Route
-        path="/gallery"
-        render={({ match }) => (
-          <React.Fragment>
-            <Header />
-            <Gallery />
-            <Footer />
-          </React.Fragment>
-        )}
-      />
-      <Route
-        path="/rsvp"
-        render={() => (
-          <React.Fragment>
-            <Header />
-            <Contact />
-            <Footer />
-          </React.Fragment>
-        )}
-      />
+      <PrivateRoute exact path="/" component={Home} />
+
+      <PrivateRoute path="/wedding" component={Gallery} />
+      <Route path="/login" render={props => <Login fakeAuth={fakeAuth} {...props} />} />
       <Route
         render={() => (
           <React.Fragment>
@@ -45,6 +56,6 @@ const Main = () => (
         )}
       />
     </Switch>
-  </main>
+  </React.Fragment>
 );
 export default Main;

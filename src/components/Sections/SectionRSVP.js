@@ -144,13 +144,21 @@ const SectionRSVP = () => (
             <Row>
               <Col md={12}>
                 <FormGroup>
-                  <Input type="textarea" rows="5" name="text" placeholder="Write your message..." id="rsvpText" />
+                  <Input
+                    type="textarea"
+                    rows="5"
+                    name="text"
+                    placeholder="Write your message..."
+                    id="rsvpText"
+                  />
                 </FormGroup>
               </Col>
             </Row>
           </Form>
 
-          <Button className="btn btn-primary btn-lg">I´m Attending</Button>
+          <Button color="primary" size="lg">
+            I´m Attending
+          </Button>
         </Col>
       </Row>
     </Container>

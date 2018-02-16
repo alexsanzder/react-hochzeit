@@ -12,14 +12,14 @@ import SectionFeatured from '../Sections/SectionFeatured';
 import SectionGifts from '../Sections/SectionGifts';
 import SectionRSVP from '../Sections/SectionRSVP';
 
-const Home = () => (
+const Home = props => (
   <Route
     exact
     path="/"
     render={({ match }) => (
       <div>
         <SectionHome />
-        <Header />
+        <Header {...props} />
         <SectionCouple />
         <SectionFrase />
         <SectionTimeLine />

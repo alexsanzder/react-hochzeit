@@ -9,6 +9,10 @@ body {
 
 a {
   color: #c3a180;
+
+  &:hover{
+    color: #7b7571;
+  }
 }
 
 h1,

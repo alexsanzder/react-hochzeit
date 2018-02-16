@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { NavLink } from 'react-router-dom';
+import { NavLink, withRouter } from 'react-router-dom';
 
 import Sticky from 'react-stickynode';
 import { Container, Navbar, Nav, NavbarToggler, Collapse } from 'reactstrap';
@@ -17,6 +17,16 @@ const StyledNavbar = styled(Navbar)`
 
 const StyledNav = styled(Nav)`
   padding: 0px 10px;
+  > li a,
+  a:not([href]):not([tabindex]) {
+    color: #777;
+    cursor: pointer;
+    &:hover {
+      color: #333;
+
+      text-decoration: none;
+    }
+  }
 `;
 
 const StyledNavBrand = styled(NavLink)`
@@ -101,7 +111,21 @@ export default class Header extends React.Component {
     });
   };
 
+  signOut = this.props.fakeAuth.isAuthenticated ? (
+    <a
+      onClick={() => {
+        this.props.fakeAuth.signout(() => this.props.history.push('/'));
+      }}
+    >
+      Sign out
+    </a>
+  ) : (
+    <p>You are not logged in.</p>
+  );
+
   render() {
+    console.log(this.props);
+
     return (
       <NavHeader>
         <StyledSticky innerZ="1200">
@@ -116,7 +140,7 @@ export default class Header extends React.Component {
               <Collapse isOpen={this.state.isOpen} navbar>
                 <StyledNav className="ml-auto">
                   <li>
-                    <StyledLink exact activeClassName="active" to="/">
+                    <StyledLink activeClassName="active" to="/">
                       Home
                     </StyledLink>
                   </li>
@@ -145,6 +169,7 @@ export default class Header extends React.Component {
                       FAQs
                     </StyledLink>
                   </li>
+                  <li>{this.signOut}</li>
                 </StyledNav>
               </Collapse>
             </Container>
