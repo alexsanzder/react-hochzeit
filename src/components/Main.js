@@ -1,4 +1,6 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+
 import { Switch, Route, Redirect } from 'react-router-dom';
 
 import Header from './Header';
@@ -57,4 +59,15 @@ const Main = () => (
     />
   </Switch>
 );
+
+PrivateRoute.propTypes = {
+  match: PropTypes.objectOf(PropTypes.object),
+  location: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
+  component: PropTypes.func.isRequired,
+};
+PrivateRoute.defaultProps = {
+  match: {},
+  location: {},
+};
+
 export default Main;

@@ -1,9 +1,16 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+
 import { Redirect } from 'react-router-dom';
 import Cryptr from 'cryptr';
 import SectionLogin from '../Sections/SectionLogin';
 
-class Login extends React.Component {
+export default class Login extends React.Component {
+  static defaultProps = {
+    location: '/',
+    fakeAuth: { authenticate: false },
+  };
+
   state = {
     redirectToReferrer: false,
     codeMatch: false,
@@ -49,4 +56,7 @@ class Login extends React.Component {
   }
 }
 
-export default Login;
+Login.propTypes = {
+  location: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
+  fakeAuth: PropTypes.oneOfType([PropTypes.bool, PropTypes.object]),
+};

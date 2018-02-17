@@ -1,4 +1,6 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+
 import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
 
@@ -202,3 +204,8 @@ export default class Header extends React.Component {
     );
   }
 }
+
+Header.propTypes = {
+  fakeAuth: PropTypes.oneOfType([PropTypes.bool, PropTypes.object]).isRequired,
+  history: PropTypes.oneOfType([PropTypes.string, PropTypes.object]).isRequired,
+};

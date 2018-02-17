@@ -1,7 +1,9 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+
 import styled from 'styled-components';
 
-import { Container, Row, Col, Form, FormGroup, Input, Button } from 'reactstrap';
+import { Container, Row, Col, FormGroup, Input, Button } from 'reactstrap';
 
 const StyledSection = styled.section`
   position: fixed;
@@ -181,9 +183,9 @@ const SectionLogin = props => (
                     <StyledLabel htmlFor="rememberme">Remember me the next time.</StyledLabel>
                   </FormGroup>
                   <p className="top-mrg-40">
-                    <a href="#" className="forgot">
-                      Can't find your invitation's code?
-                    </a>
+                    <Button tag="a" className="forgot">
+                      Can&#39;t find your invitation&#39;s code?
+                    </Button>
                   </p>
                 </div>
                 {/* <p>
@@ -254,4 +256,11 @@ const SectionLogin = props => (
     </Container>
   </StyledSection>
 );
+
+SectionLogin.propTypes = {
+  codeMatch: PropTypes.bool.isRequired,
+  handleLogin: PropTypes.func.isRequired,
+  handleCode: PropTypes.func.isRequired,
+  handleKeyPress: PropTypes.func.isRequired,
+};
 export default SectionLogin;
