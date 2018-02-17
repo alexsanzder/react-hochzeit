@@ -12,7 +12,7 @@ const StyledSection = styled.section`
 `;
 
 const Background = styled.div`
-  background-image: url(https://source.unsplash.com/1600x900/?wedding);
+  background-image: url(https://source.unsplash.com/1100x619/?wedding);
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -65,7 +65,7 @@ const Card = styled.div`
 `;
 
 const Login = styled.div`
-  padding: 20px 0 20px 0;
+  padding: 30px 0 20px 0;
   h5 {
     margin-top: 20px;
     margin-bottom: 40px;
@@ -97,7 +97,7 @@ const StyledInput = styled.input`
   }
 `;
 
-const StyledForm = styled(Form)`
+const StyledForm = styled.div`
   input,
   textarea {
     border: 2px solid #b6b7b7;
@@ -122,6 +122,22 @@ const StyledForm = styled(Form)`
     border-color: #a94442;
   }
 `;
+
+const StyledButton = styled(Button)`
+  &:disabled,
+  .btn-primary {
+    cursor: not-allowed;
+    opacity: 0.4;
+    background-color: #c3a180;
+    border-color: #c3a180;
+    &:hover,
+    .btn-primary:hover {
+      color: #fff;
+      background-color: #c3a180;
+      border-color: #c3a180;
+    }
+  }
+`;
 const SectionLogin = props => (
   <StyledSection>
     <Background />
@@ -130,36 +146,43 @@ const SectionLogin = props => (
         <Col md={{ size: 4, offset: 8 }} xs={4} className="align-self-center text-center">
           <Card>
             <Login>
-              <h5>Please use your invitation´s password to view this content</h5>
+              <h5>Please use your invitation´s code to view the event content</h5>
               <StyledForm method="get">
-                <FormGroup>
+                {/* <FormGroup>
                   <Input type="name" name="name" placeholder="Your Name" id="rsvpName" />
-                </FormGroup>
+                </FormGroup> */}
                 <FormGroup>
                   <Input
                     type="password"
                     name="password"
-                    placeholder="Your Invitation's Password"
-                    id="rsvpPassword"
+                    placeholder="Your Invitation's code"
+                    autoFocus
+                    onChange={props.handleCode}
+                    onKeyPress={props.handleKeyPress}
                   />
                 </FormGroup>
-                <FormGroup>
-                  <StyledInput
-                    type="checkbox"
-                    id="rememberme"
-                    name="rememberme"
-                    value="Rmemeber me"
-                  />
-                  <StyledLabel htmlFor="rememberme">Remember me the next time.</StyledLabel>
-                </FormGroup>
-
-                <div className="top-mrg-30">
-                  <Button color="primary" size="lg" block onClick={props.login}>
-                    Log in
-                  </Button>
-                  <p className="top-mrg-20">
+                <StyledButton
+                  color="primary"
+                  size="lg"
+                  block
+                  onClick={props.handleLogin}
+                  disabled={!props.codeMatch}
+                >
+                  Log in
+                </StyledButton>
+                <div className="top-mrg-10">
+                  <FormGroup>
+                    <StyledInput
+                      type="checkbox"
+                      id="rememberme"
+                      name="rememberme"
+                      value="Rmemeber me"
+                    />
+                    <StyledLabel htmlFor="rememberme">Remember me the next time.</StyledLabel>
+                  </FormGroup>
+                  <p className="top-mrg-40">
                     <a href="#" className="forgot">
-                      Can't find your invitation's password?
+                      Can't find your invitation's code?
                     </a>
                   </p>
                 </div>

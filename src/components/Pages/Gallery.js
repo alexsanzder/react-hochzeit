@@ -1,9 +1,8 @@
 import React from 'react';
 import SectionGallery from '../Sections/SectionGallery';
 
-const Gallery = match => (
+const Gallery = () => (
   <div>
-    <h1>{match.url}</h1>
     <SectionGallery />
   </div>
 );

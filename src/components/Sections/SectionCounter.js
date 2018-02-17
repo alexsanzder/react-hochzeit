@@ -124,7 +124,7 @@ const SectionCounter = () => (
         <Row>
           <Col md={{ size: 8, offset: 2 }} xs={12} className="text-center">
             <h2>Counting the minutes for the big day!</h2>
-            <Countdown date={'May 26, 2018 12:00:00'} renderer={renderer} />
+            <Countdown date={'May 26, 2018 13:00:00'} renderer={renderer} />
           </Col>
         </Row>
       </Container>

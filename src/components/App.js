@@ -3,17 +3,20 @@ import Helmet from 'react-helmet';
 
 import FullScreenLoaidng from './FullScreenLoaidng';
 import Main from './Main';
-import Footer from './Footer';
 
 import globalStyles from './global-styles';
+import favicon from '../favicon.svg';
 
 globalStyles();
 
 const App = () => (
-  <div>
-    <Helmet title="You Are Doing Great" />
+  <React.Fragment>
+    <Helmet>
+      <title>You Are Doing Great</title>
+      <link rel="shortcut icon" href={favicon} />
+    </Helmet>
     <FullScreenLoaidng />
     <Main />
-  </div>
+  </React.Fragment>
 );
 export default App;

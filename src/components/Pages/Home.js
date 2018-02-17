@@ -1,5 +1,4 @@
 import React from 'react';
-import { Route } from 'react-router-dom';
 
 import Header from '../Header';
 
@@ -13,23 +12,17 @@ import SectionGifts from '../Sections/SectionGifts';
 import SectionRSVP from '../Sections/SectionRSVP';
 
 const Home = props => (
-  <Route
-    exact
-    path="/"
-    render={({ match }) => (
-      <div>
-        <SectionHome />
-        <Header {...props} />
-        <SectionCouple />
-        <SectionFrase />
-        <SectionTimeLine />
-        <SectionCounter />
-        <SectionFeatured />
-        <SectionGifts />
-        <SectionRSVP />
-      </div>
-    )}
-  />
+  <React.Fragment>
+    <SectionHome />
+    <Header {...props} />
+    <SectionCouple />
+    <SectionFrase />
+    <SectionTimeLine />
+    <SectionCounter />
+    <SectionFeatured />
+    <SectionGifts />
+    <SectionRSVP />
+  </React.Fragment>
 );
 
 export default Home;

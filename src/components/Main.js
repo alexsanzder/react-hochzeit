@@ -7,7 +7,6 @@ import Footer from './Footer';
 import Login from './Pages/Login';
 import Home from './Pages/Home';
 import Gallery from './Pages/Gallery';
-import Contact from './Pages/Contact';
 
 const fakeAuth = {
   isAuthenticated: false,
@@ -26,7 +25,11 @@ const PrivateRoute = ({ component: Component, ...rest }) => (
     {...rest}
     render={props =>
       (fakeAuth.isAuthenticated === true ? (
-        <Component fakeAuth={fakeAuth} {...props} />
+        <React.Fragment>
+          {props.match.path !== '/' ? <Header fakeAuth={fakeAuth} /> : null}
+          <Component fakeAuth={fakeAuth} {...props} />
+          <Footer />
+        </React.Fragment>
       ) : (
         <Redirect
           to={{
@@ -40,22 +43,18 @@ const PrivateRoute = ({ component: Component, ...rest }) => (
 );
 
 const Main = () => (
-  <React.Fragment>
-    <Switch>
-      <PrivateRoute exact path="/" component={Home} />
+  <Switch>
+    <PrivateRoute exact path="/" component={Home} />
+    <PrivateRoute path="/gallery" component={Gallery} />
+    <Route exact path="/login" render={props => <Login fakeAuth={fakeAuth} {...props} />} />
 
-      <PrivateRoute path="/wedding" component={Gallery} />
-      <Route path="/login" render={props => <Login fakeAuth={fakeAuth} {...props} />} />
-      <Route
-        render={() => (
-          <React.Fragment>
-            <Header />
-            <h1>Page Not Found</h1>
-            <Footer />
-          </React.Fragment>
-        )}
-      />
-    </Switch>
-  </React.Fragment>
+    <Route
+      render={() => (
+        <React.Fragment>
+          <h1>Page Not Found</h1>
+        </React.Fragment>
+      )}
+    />
+  </Switch>
 );
 export default Main;

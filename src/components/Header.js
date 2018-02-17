@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { NavLink, withRouter } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 import Sticky from 'react-stickynode';
 import { Container, Navbar, Nav, NavbarToggler, Collapse } from 'reactstrap';
@@ -13,20 +13,6 @@ const StyledNavbar = styled(Navbar)`
   padding: 20px 0px;
   background-color: #fff;
   border: 0px;
-`;
-
-const StyledNav = styled(Nav)`
-  padding: 0px 10px;
-  > li a,
-  a:not([href]):not([tabindex]) {
-    color: #777;
-    cursor: pointer;
-    &:hover {
-      color: #333;
-
-      text-decoration: none;
-    }
-  }
 `;
 
 const StyledNavBrand = styled(NavLink)`
@@ -100,6 +86,44 @@ const StyledSticky = styled(Sticky)`
 
 const NavHeader = styled.header``;
 
+const LogoutButton = styled.a`
+  &:not([href]):not([tabindex]) {
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+    width: 75px;
+    height: 30px;
+    text-align: center;
+    color: #fff;
+    font-size: 18px;
+    font-weight: normal;
+    line-height: 1;
+    border-radius: 25px;
+    margin: 0px 5px 0 5px;
+    border: 4px solid #62655a;
+    background: #62655a;
+    bottom: 2px;
+    cursor: pointer;
+
+    &:hover {
+      color: #fff;
+      border: 4px solid #c3a180;
+      background: #c3a180;
+    }
+  }
+`;
+
+const StyledNav = styled(Nav)`
+  padding: 0px 10px;
+  > li a {
+    color: #777;
+    &:hover {
+      color: #333;
+      text-decoration: none;
+    }
+  }
+`;
+
 export default class Header extends React.Component {
   state = {
     isOpen: false,
@@ -111,27 +135,26 @@ export default class Header extends React.Component {
     });
   };
 
-  signOut = this.props.fakeAuth.isAuthenticated ? (
-    <a
-      onClick={() => {
-        this.props.fakeAuth.signout(() => this.props.history.push('/'));
-      }}
-    >
-      Sign out
-    </a>
-  ) : (
-    <p>You are not logged in.</p>
-  );
+  authButton = () =>
+    (this.props.fakeAuth.isAuthenticated ? (
+      <LogoutButton
+        onClick={() => {
+          this.props.fakeAuth.signout(() => this.props.history.push('/'));
+        }}
+      >
+        Logout
+      </LogoutButton>
+    ) : (
+      <p>You are not logged in.</p>
+    ));
 
   render() {
-    console.log(this.props);
-
     return (
       <NavHeader>
         <StyledSticky innerZ="1200">
           <StyledNavbar light expand="md">
             <Container>
-              <StyledNavBrand exact to="/">
+              <StyledNavBrand to="/">
                 <Names>
                   <li>Padme</li> <Circle>&amp;</Circle> <li>Anakin</li>
                 </Names>
@@ -169,7 +192,7 @@ export default class Header extends React.Component {
                       FAQs
                     </StyledLink>
                   </li>
-                  <li>{this.signOut}</li>
+                  <li>{this.authButton()}</li>
                 </StyledNav>
               </Collapse>
             </Container>
