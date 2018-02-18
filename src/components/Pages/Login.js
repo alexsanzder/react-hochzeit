@@ -1,19 +1,17 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-
 import { Redirect } from 'react-router-dom';
+
 import Cryptr from 'cryptr';
+import cookie from 'react-cookies';
+
 import SectionLogin from '../Sections/SectionLogin';
 
 export default class Login extends React.Component {
-  static defaultProps = {
-    location: '/',
-    fakeAuth: { authenticate: false },
-  };
-
   state = {
     redirectToReferrer: false,
     codeMatch: false,
+    remember: false,
   };
 
   handleCode = (e) => {
@@ -29,11 +27,18 @@ export default class Login extends React.Component {
       this.handleLogin();
     }
   };
+
   handleLogin = () => {
-    this.props.fakeAuth.authenticate(() => {
+    this.props.fakeAuth.authenticate(this.state.remember, () => {
       this.setState(() => ({
         redirectToReferrer: this.state.codeMatch,
       }));
+    });
+  };
+
+  handleRemember = (e) => {
+    this.setState({
+      remember: e.target.checked,
     });
   };
 
@@ -50,6 +55,7 @@ export default class Login extends React.Component {
         handleLogin={this.handleLogin}
         handleCode={this.handleCode}
         handleKeyPress={this.handleKeyPress}
+        handleRemember={this.handleRemember}
         codeMatch={this.state.codeMatch}
       />
     );
@@ -57,6 +63,6 @@ export default class Login extends React.Component {
 }
 
 Login.propTypes = {
-  location: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
-  fakeAuth: PropTypes.oneOfType([PropTypes.bool, PropTypes.object]),
+  location: PropTypes.oneOfType([PropTypes.string, PropTypes.object]).isRequired,
+  fakeAuth: PropTypes.oneOfType([PropTypes.bool, PropTypes.object]).isRequired,
 };

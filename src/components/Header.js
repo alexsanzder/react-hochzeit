@@ -4,6 +4,8 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
 
+import cookie from 'react-cookies';
+
 import Sticky from 'react-stickynode';
 import { Container, Navbar, Nav, NavbarToggler, Collapse } from 'reactstrap';
 

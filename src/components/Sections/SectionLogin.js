@@ -149,7 +149,7 @@ const SectionLogin = props => (
           <Card>
             <Login>
               <h5>Please use your invitation´s code to view the event content</h5>
-              <StyledForm method="get">
+              <StyledForm>
                 {/* <FormGroup>
                   <Input type="name" name="name" placeholder="Your Name" id="rsvpName" />
                 </FormGroup> */}
@@ -164,6 +164,7 @@ const SectionLogin = props => (
                   />
                 </FormGroup>
                 <StyledButton
+                  type="submit"
                   color="primary"
                   size="lg"
                   block
@@ -172,84 +173,22 @@ const SectionLogin = props => (
                 >
                   Log in
                 </StyledButton>
-                <div className="top-mrg-10">
+                <div className="top-mrg-20">
                   <FormGroup>
                     <StyledInput
                       type="checkbox"
                       id="rememberme"
-                      name="rememberme"
-                      value="Rmemeber me"
+                      name="remember"
+                      onChange={props.handleRemember}
                     />
                     <StyledLabel htmlFor="rememberme">Remember me the next time.</StyledLabel>
                   </FormGroup>
-                  <p className="top-mrg-40">
-                    <Button tag="a" className="forgot">
-                      Can&#39;t find your invitation&#39;s code?
-                    </Button>
-                  </p>
                 </div>
-                {/* <p>
-                    <strong>New to TimeInfo?</strong>
-                    <br />
-                    <a href="#" id="flip-btn" className="signup signup_link">
-                      Sign up for a new account
-                    </a>
-                  </p> */}
               </StyledForm>
+              <p className="top-mrg-40">
+                <a className="forgot">Can&#39;t find your invitation&#39;s code?</a>
+              </p>
             </Login>
-            {/* <div className="back signup_form">
-              <p>Sign Up for Your New Account</p>
-              <form className="login-form">
-                <div className="form-group">
-                  <div className="input-group">
-                    <input type="text" className="form-control" placeholder="Username" />
-                    <span className="input-group-addon">
-                      <i className="glyphicon glyphicon-user" />
-                    </span>
-                  </div>
-                </div>
-                <div className="form-group">
-                  <div className="input-group">
-                    <input type="text" className="form-control" />
-                    <span className="input-group-btn">
-                      <button type="button" className="btn btn-cyan">
-                        <span className="fa fa-refresh" />
-                      </button>
-                    </span>
-                  </div>
-                </div>
-                <div className="form-group">
-                  <div className="input-group">
-                    <input
-                      type="password"
-                      className="form-control"
-                      placeholder="Confirm Password"
-                    />
-                    <span className="input-group-addon">
-                      <i className="glyphicon glyphicon-lock" />
-                    </span>
-                  </div>
-                </div>
-                <div className="form-group">
-                  <div className="input-group">
-                    <input type="email" className="form-control" placeholder="Email" />
-                    <span className="input-group-addon">
-                      <i className="glyphicon glyphicon-envelope" />
-                    </span>
-                  </div>
-                </div>
-
-                <div className="form-group sign-btn">
-                  <input type="submit" className="btn" value="Sign up" />
-                  <p>
-                    You have already Account So{' '}
-                    <a href="#" id="unflip-btn" className="signup">
-                      Log in
-                    </a>
-                  </p>
-                </div>
-              </form>
-            </div> */}
           </Card>
         </Col>
       </Row>
@@ -262,5 +201,6 @@ SectionLogin.propTypes = {
   handleLogin: PropTypes.func.isRequired,
   handleCode: PropTypes.func.isRequired,
   handleKeyPress: PropTypes.func.isRequired,
+  handleRemember: PropTypes.func.isRequired,
 };
 export default SectionLogin;

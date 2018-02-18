@@ -1,7 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-
 import { Switch, Route, Redirect } from 'react-router-dom';
+
+import cookie from 'react-cookies';
 
 import Header from './Header';
 import Footer from './Footer';
@@ -11,13 +12,17 @@ import Home from './Pages/Home';
 import Gallery from './Pages/Gallery';
 
 const fakeAuth = {
-  isAuthenticated: false,
-  authenticate(cb) {
+  isAuthenticated: cookie.load('remember'),
+  authenticate(remember, cb) {
     this.isAuthenticated = true;
+    if (remember) {
+      cookie.save('remember', 1);
+    }
     setTimeout(cb, 100); // fake async
   },
   signout(cb) {
     this.isAuthenticated = false;
+    cookie.remove('remember');
     setTimeout(cb, 100); // fake async
   },
 };
@@ -26,7 +31,7 @@ const PrivateRoute = ({ component: Component, ...rest }) => (
   <Route
     {...rest}
     render={props =>
-      (fakeAuth.isAuthenticated === true ? (
+      (fakeAuth.isAuthenticated ? (
         <React.Fragment>
           {props.match.path !== '/' ? <Header fakeAuth={fakeAuth} /> : null}
           <Component fakeAuth={fakeAuth} {...props} />

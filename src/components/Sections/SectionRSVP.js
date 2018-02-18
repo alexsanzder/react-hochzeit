@@ -94,12 +94,12 @@ const SectionRSVP = () => (
           </div>
         </Col>
         <Col md={{ size: 8, offset: 2 }} xs={12} className="text-center">
-          <Form>
+          <Form method="post" action="/rsvp">
             <Row className="bot-mrg-20">
               <Col md={4} className="text-center">
                 <StyledInput
-                  type="checkbox"
                   id="checkbox-1"
+                  type="checkbox"
                   name="events[]"
                   value="Pre-Wedding Dinner"
                 />
@@ -111,7 +111,7 @@ const SectionRSVP = () => (
                 </StyledLabel>
               </Col>
               <Col md={4} className="text-center">
-                <StyledInput type="checkbox" id="checkbox-2" name="events[]" value="Ceremonyr" />
+                <StyledInput id="checkbox-2" type="checkbox" name="events[]" value="Ceremony" />
                 <StyledLabel htmlFor="checkbox-2">
                   Ceremony
                   <p>
@@ -120,7 +120,7 @@ const SectionRSVP = () => (
                 </StyledLabel>
               </Col>
               <Col md={4} className="text-center">
-                <StyledInput type="checkbox" id="checkbox-3" name="events[]" value="Party" />
+                <StyledInput id="checkbox-3" type="checkbox" name="events[]" value="Party" />
                 <StyledLabel htmlFor="checkbox-3">
                   Party
                   <p>
@@ -132,12 +132,12 @@ const SectionRSVP = () => (
             <Row>
               <Col md={6}>
                 <FormGroup>
-                  <Input type="name" name="name" placeholder="Your Name" id="rsvpName" />
+                  <Input type="text" name="name" placeholder="Your Name" id="name" />
                 </FormGroup>
               </Col>
               <Col md={6}>
                 <FormGroup>
-                  <Input type="email" name="email" placeholder="Your Email" id="rsvpEmail" />
+                  <Input type="email" name="email" placeholder="Your Email" id="email" />
                 </FormGroup>
               </Col>
             </Row>
@@ -147,18 +147,17 @@ const SectionRSVP = () => (
                   <Input
                     type="textarea"
                     rows="5"
-                    name="text"
+                    name="message"
                     placeholder="Write your message..."
-                    id="rsvpText"
+                    id="message"
                   />
                 </FormGroup>
               </Col>
             </Row>
+            <Button type="submit" color="primary" size="lg">
+              I´m Attending
+            </Button>
           </Form>
-
-          <Button color="primary" size="lg">
-            I´m Attending
-          </Button>
         </Col>
       </Row>
     </Container>
