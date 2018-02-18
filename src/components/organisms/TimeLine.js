@@ -54,8 +54,8 @@ const TimeLineBadge = styled.div`
   border-top-left-radius: 50%;
   border-bottom-right-radius: 50%;
   border-bottom-left-radius: 50%;
-  top: ${props => (props.end ? '100%' : null)};
-  left: ${props => (props.end ? '50%' : null)};
+  top: ${props => (props.last ? '100%' : null)};
+  left: ${props => (props.last ? '50%' : null)};
 `;
 
 const TimeLinePanel = styled.div`
@@ -242,7 +242,7 @@ const SectionTimeLine = () => (
           </TimeLinePanel>
         </TimeLineItem>
         <TimeLineItem>
-          <TimeLineBadge end>
+          <TimeLineBadge last>
             <i className="fas fa-heart" aria-hidden="true" />
           </TimeLineBadge>
         </TimeLineItem>

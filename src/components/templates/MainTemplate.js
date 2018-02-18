@@ -4,12 +4,12 @@ import { Switch, Route, Redirect } from 'react-router-dom';
 
 import cookie from 'react-cookies';
 
-import Header from './Header';
-import Footer from './Footer';
+import Header from '../organisms/Header';
+import Footer from '../organisms/Footer';
 
-import Login from './Pages/Login';
-import Home from './Pages/Home';
-import Gallery from './Pages/Gallery';
+import Login from '../pages/LoginPage';
+import Home from '../pages/HomePage';
+import Gallery from '../pages/GalleryPage';
 
 const fakeAuth = {
   isAuthenticated: cookie.load('remember'),
@@ -49,7 +49,7 @@ const PrivateRoute = ({ component: Component, ...rest }) => (
   />
 );
 
-const Main = () => (
+const MainTemplate = () => (
   <Switch>
     <PrivateRoute exact path="/" component={Home} />
     <PrivateRoute path="/gallery" component={Gallery} />
@@ -75,4 +75,4 @@ PrivateRoute.defaultProps = {
   location: {},
 };
 
-export default Main;
+export default MainTemplate;

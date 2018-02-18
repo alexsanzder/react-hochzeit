@@ -3,9 +3,8 @@ import PropTypes from 'prop-types';
 import { Redirect } from 'react-router-dom';
 
 import Cryptr from 'cryptr';
-import cookie from 'react-cookies';
 
-import SectionLogin from '../Sections/SectionLogin';
+import SectionLogin from '../organisms/Login';
 
 export default class Login extends React.Component {
   state = {

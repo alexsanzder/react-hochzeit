@@ -4,8 +4,8 @@ import { BrowserRouter } from 'react-router-dom';
 
 import 'bootstrap/dist/css/bootstrap.css';
 
-import App from './components/App';
 import ScrollToTop from './components/ScrollToTop';
+import App from './components/App';
 
 ReactDOM.render(
   <BrowserRouter>
