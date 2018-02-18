@@ -1,5 +1,5 @@
 import React from 'react';
-import SectionGallery from '../Sections/SectionGallery';
+import SectionGallery from '../organisms/Gallery';
 
 const Gallery = () => (
   <div>
