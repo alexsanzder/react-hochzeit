@@ -8,11 +8,7 @@ const app = express();
 
 // Setup bodyParser
 app.use(bodyParser.json());
-app.use(
-  bodyParser.urlencoded({
-    extended: true,
-  }),
-);
+app.use(bodyParser.urlencoded({ extended: true }));
 
 // Setup logger
 app.use(
