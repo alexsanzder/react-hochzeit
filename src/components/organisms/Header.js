@@ -185,8 +185,8 @@ export default class Header extends React.Component {
                     </StyledLink>
                   </li>
                   <li>
-                    <StyledLink activeClassName="active" to="/registry">
-                      Registry
+                    <StyledLink activeClassName="active" to="/rsvp">
+                      Contact
                     </StyledLink>
                   </li>
                   <li>

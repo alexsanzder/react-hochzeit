@@ -6,10 +6,6 @@ import { Container, Row, Col } from 'reactstrap';
 
 const Title = styled.h3`
   span {
-    -moz-border-top-colors: none;
-    -moz-border-right-colors: none;
-    -moz-border-bottom-colors: none;
-    -moz-border-left-colors: none;
     border-image: none;
     display: inline-block;
     margin: 5px 10px;

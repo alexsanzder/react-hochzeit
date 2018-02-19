@@ -1,9 +1,9 @@
 import React from 'react';
-import SectionRSVP from '../Sections/SectionRSVP';
+import RSVP from '../organisms/RSVP';
 
 const Contact = () => (
   <div>
-    <SectionRSVP />
+    <RSVP />
   </div>
 );
 

@@ -4,10 +4,11 @@ import { Parallax } from 'react-parallax';
 
 import { Container, Row, Col } from 'reactstrap';
 
-const StyledSection = styled.section`
-  padding: 120px 0px;
-  background-attachment: fixed;
-  background-size: cover;
+const StyledParallax = styled(Parallax)`
+  position: ${props => (props.fixed ? 'fixed !important' : 'relative')};
+  padding: 100px 0px;
+  width: 100%;
+  bottom: 0;
 `;
 
 const Names = styled.ul`
@@ -58,29 +59,34 @@ const Copyright = styled.div`
   margin-top: 40px;
 `;
 
-const Footer = () => (
-  <Parallax blur={9} bgImage={'http://via.placeholder.com/1100x619'} bgImageAlt="" strength={400}>
-    <StyledSection>
-      <Container>
-        <Row>
-          <Col md={{ size: 10, offset: 1 }} xs={12} className="text-center">
-            <h1>Thank You!</h1>
-            <Names>
-              <li>Padme</li>
-              <Circle>&amp;</Circle>
-              <li>Anakin</li>
-            </Names>
-            <Copyright>
-              All Rights Reserved © 2018 |{' '}
-              <a href="http://weetsi.com" target="_blank" rel="noopener noreferrer">
-                Alejandro Sánchez
-              </a>
-            </Copyright>
-          </Col>
-        </Row>
-      </Container>
-    </StyledSection>
-  </Parallax>
+const Footer = props => (
+  <StyledParallax
+    blur={9}
+    bgImage={'http://via.placeholder.com/1100x619'}
+    bgHeight={250}
+    bgImageAlt=""
+    strength={400}
+    fixed={props.fixed}
+  >
+    <Container>
+      <Row>
+        <Col md={{ size: 10, offset: 1 }} xs={12} className="text-center">
+          <h1>Thank You!</h1>
+          <Names>
+            <li>Padme</li>
+            <Circle>&amp;</Circle>
+            <li>Anakin</li>
+          </Names>
+          <Copyright>
+            All Rights Reserved © 2018 |{' '}
+            <a href="http://weetsi.com" target="_blank" rel="noopener noreferrer">
+              Alejandro Sánchez
+            </a>
+          </Copyright>
+        </Col>
+      </Row>
+    </Container>
+  </StyledParallax>
 );
 
 export default Footer;

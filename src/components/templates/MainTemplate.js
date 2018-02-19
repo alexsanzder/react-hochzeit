@@ -10,6 +10,8 @@ import Footer from '../organisms/Footer';
 import Login from '../pages/LoginPage';
 import Home from '../pages/HomePage';
 import Gallery from '../pages/GalleryPage';
+import Contact from '../pages/ContactPage';
+import NotFound from '../pages/NotFoundPage';
 
 const fakeAuth = {
   isAuthenticated: cookie.load('remember'),
@@ -55,12 +57,15 @@ const MainTemplate = () => (
   <Switch>
     <PrivateRoute exact path="/" component={Home} />
     <PrivateRoute path="/gallery" component={Gallery} />
+    <PrivateRoute path="/rsvp" component={Contact} />
     <Route exact path="/login" render={props => <Login fakeAuth={fakeAuth} {...props} />} />
 
     <Route
       render={() => (
         <React.Fragment>
-          <h1>Page Not Found</h1>
+          <Header fakeAuth={fakeAuth} />
+          <NotFound />
+          <Footer fixed />
         </React.Fragment>
       )}
     />
