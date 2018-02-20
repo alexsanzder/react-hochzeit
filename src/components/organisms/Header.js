@@ -165,13 +165,18 @@ export default class Header extends React.Component {
               <Collapse isOpen={this.state.isOpen} navbar>
                 <StyledNav className="ml-auto">
                   <li>
-                    <StyledLink activeClassName="active" to="/">
+                    <StyledLink exact activeClassName="active" to="/">
                       Home
                     </StyledLink>
                   </li>
                   <li>
                     <StyledLink activeClassName="active" to="/wedding">
                       Wedding
+                    </StyledLink>
+                  </li>
+                  <li>
+                    <StyledLink activeClassName="active" to="/story">
+                      Our Story
                     </StyledLink>
                   </li>
                   <li>

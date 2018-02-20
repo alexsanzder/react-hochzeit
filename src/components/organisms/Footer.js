@@ -6,11 +6,17 @@ import { Container, Row, Col } from 'reactstrap';
 
 const StyledParallax = styled(Parallax)`
   position: ${props => (props.fixed ? 'fixed !important' : 'relative')};
-  padding: 100px 0px;
+  padding: 80px 0px;
   width: 100%;
   bottom: 0;
 `;
 
+const StyledSection = styled.section`
+  position: ${props => (props.fixed ? 'fixed !important' : 'relative')};
+  padding: 50px 0px;
+  width: 100%;
+  bottom: 0;
+`;
 const Names = styled.ul`
   list-style: none;
   display: inline;
@@ -56,18 +62,11 @@ const Circle = styled.li`
 `;
 
 const Copyright = styled.div`
-  margin-top: 40px;
+  margin-top: 20px;
 `;
 
 const Footer = props => (
-  <StyledParallax
-    blur={9}
-    bgImage={'http://via.placeholder.com/1100x619'}
-    bgHeight={250}
-    bgImageAlt=""
-    strength={400}
-    fixed={props.fixed}
-  >
+  <StyledSection fixed={props.fixed} className="bg-gray-3">
     <Container>
       <Row>
         <Col md={{ size: 10, offset: 1 }} xs={12} className="text-center">
@@ -86,7 +85,7 @@ const Footer = props => (
         </Col>
       </Row>
     </Container>
-  </StyledParallax>
+  </StyledSection>
 );
 
 export default Footer;

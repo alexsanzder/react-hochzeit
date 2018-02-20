@@ -136,7 +136,7 @@ const TimeLineList = styled.ul`
 `;
 
 const SectionTimeLine = () => (
-  <StyledSection>
+  <StyledSection className="bg-gray-1">
     <Container>
       <Row>
         <Col md={{ size: 8, offset: 2 }} xs={12} className="text-center">

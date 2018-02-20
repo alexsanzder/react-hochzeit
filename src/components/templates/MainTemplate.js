@@ -9,6 +9,7 @@ import Footer from '../organisms/Footer';
 
 import Login from '../pages/LoginPage';
 import Home from '../pages/HomePage';
+import TimeLine from '../pages/TimeLinePage';
 import Gallery from '../pages/GalleryPage';
 import Contact from '../pages/ContactPage';
 import NotFound from '../pages/NotFoundPage';
@@ -56,8 +57,10 @@ const PrivateRoute = ({ component: Component, ...rest }) => (
 const MainTemplate = () => (
   <Switch>
     <PrivateRoute exact path="/" component={Home} />
-    <PrivateRoute path="/gallery" component={Gallery} />
-    <PrivateRoute path="/rsvp" component={Contact} />
+    <PrivateRoute exact path="/gallery" component={Gallery} />
+    <PrivateRoute exact path="/rsvp" component={Contact} />
+    <PrivateRoute exact path="/story" component={TimeLine} />
+
     <Route exact path="/login" render={props => <Login fakeAuth={fakeAuth} {...props} />} />
 
     <Route
